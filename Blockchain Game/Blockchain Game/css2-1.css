@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Squada One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/squadaone/v9/BCasqZ8XsOrx4mcOk6MtWaA.ttf) format('truetype');
+}
+
+.headerbar {
+    background-color: #000000;
+    background-size: cover;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.headbartext {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    font-weight: 900;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+}

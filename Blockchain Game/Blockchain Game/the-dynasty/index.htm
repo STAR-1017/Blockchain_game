@@ -1,0 +1,1839 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <style>
+        html,
+        body {
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizelegibility;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            user-select: none;
+            outline: none;
+        }
+        
+        body.dragging * {
+            cursor: grabbing !important;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        *:focus,
+        *:hover {
+            outline: none;
+        }
+        
+        .gitbook-root,
+        .gitbook-splashscreen {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slate-spacer {
+            height: 0;
+            color: transparent;
+            outline: none;
+            position: absolute;
+        }
+        
+        @keyframes LoadingIndicator {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        [data-loading-indicator="true"] {
+            animation: LoadingIndicator 0.6s ease infinite;
+        }
+    </style>
+    <title>Welcome To The Dynasty Ecosystem - The Dynasty</title>
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-Bold.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-BoldItalic.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-Black.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-BlackItalic.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-Medium.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-MediumItalic.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-Regular.woff2?v=3.19" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/woff2" href="https://app.gitbook.com/public/fonts/Roboto/Roboto-Italic.woff2?v=3.19" crossorigin="anonymous">
+    <style id="__font-Roboto-gitbook-content-font">
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local("Roboto Bold"), local("Roboto-Bold"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Bold.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Bold.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+            src: local("Roboto BoldItalic"), local("Roboto-BoldItalic"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-BoldItalic.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-BoldItalic.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: local("Roboto Black"), local("Roboto-Black"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Black.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Black.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: italic;
+            font-weight: 800;
+            font-display: swap;
+            src: local("Roboto BlackItalic"), local("Roboto-BlackItalic"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-BlackItalic.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-BlackItalic.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local("Roboto Medium"), local("Roboto-Medium"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Medium.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Medium.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: italic;
+            font-weight: 500;
+            font-display: swap;
+            src: local("Roboto MediumItalic"), local("Roboto-MediumItalic"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-MediumItalic.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-MediumItalic.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local("Roboto Regular"), local("Roboto-Regular"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Regular.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Regular.woff?v=3.19") format("woff");
+        }
+        
+        @font-face {
+            font-family: 'gitbook-content-font';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local("Roboto Italic"), local("Roboto-Italic"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Italic.woff2?v=3.19") format("woff2"), url("https://app.gitbook.com/public/fonts/Roboto/Roboto-Italic.woff?v=3.19") format("woff");
+        }
+    </style>
+    <meta name="description" content="" id="__meta-description" />
+    <meta name="og:description" content="" id="__meta-og:description" />
+    <meta name="og:image" content="https://app.gitbook.com/share/space/thumbnail/-Mjo2ABTnR_fSGc4r-lv.png?color=%23363A39&logo=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f&theme=light"
+        id="__meta-og:image" />
+    <meta name="twitter:card" content="summary" id="__meta-twitter:card" />
+    <meta name="og:title" content="Welcome To The Dynasty Ecosystem" id="__meta-og:title" />
+    <meta name="twitter:site" content="The Dynasty" id="__meta-twitter:site" />
+    <meta name="robots" content="index" id="__meta-robots" />
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Ficon%2FZeCADsgoOxvgZhTVCsKo%2FLogo%20Dynasty-512x512-2.jpg?alt=media&token=74a7e7b9-79ca-4143-a253-955fb0d72e2f" id="__link-icon"
+    />
+
+
+    <script type="module" defer src="https://app.gitbook.com/public/app/public-ETI2QQMS.min.js?v=10.1.10-4c0fda6a7c7e20d42785c6b39c80c8a19905d2bf-1545082450"></script>
+    <style id="react-native-stylesheet">
+        [stylesheet-group="0"] {}
+        
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        
+        input::-webkit-search-cancel-button,
+        input::-webkit-search-decoration,
+        input::-webkit-search-results-button,
+        input::-webkit-search-results-decoration {
+            display: none;
+        }
+        
+        [stylesheet-group="0.1"] {}
+        
+         :focus:not([data-focusvisible-polyfill]) {
+            outline: none;
+        }
+        
+        [stylesheet-group="0.5"] {}
+        
+        .css-4rbku5 {
+            background-color: rgba(0, 0, 0, 0.00);
+            color: inherit;
+            font: inherit;
+            list-style: none;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: inherit;
+            text-decoration: none;
+        }
+        
+        [stylesheet-group="1"] {}
+        
+        .css-1dbjc4n {
+            -ms-flex-align: stretch;
+            -ms-flex-direction: column;
+            -ms-flex-negative: 0;
+            -ms-flex-preferred-size: auto;
+            -webkit-align-items: stretch;
+            -webkit-box-align: stretch;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -webkit-flex-basis: auto;
+            -webkit-flex-direction: column;
+            -webkit-flex-shrink: 0;
+            align-items: stretch;
+            border: 0 solid black;
+            box-sizing: border-box;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-basis: auto;
+            flex-direction: column;
+            flex-shrink: 0;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            position: relative;
+            z-index: 0;
+        }
+        
+        .css-901oao {
+            border: 0 solid black;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 1.00);
+            display: inline;
+            font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .css-vcwn7f {
+            max-width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+        }
+        
+        .css-16my406 {
+            color: inherit;
+            font: inherit;
+            white-space: inherit;
+        }
+        
+        .css-cens5h {
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            max-width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .css-9pa8cd {
+            bottom: 0px;
+            height: 100%;
+            left: 0px;
+            opacity: 0;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 100%;
+            z-index: -1;
+        }
+        
+        [stylesheet-group="2"] {}
+        
+        .r-13awgt0 {
+            -ms-flex: 1 1 0%;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        
+        .r-42olwf {
+            border-bottom-color: rgba(0, 0, 0, 0.00);
+            border-left-color: rgba(0, 0, 0, 0.00);
+            border-right-color: rgba(0, 0, 0, 0.00);
+            border-top-color: rgba(0, 0, 0, 0.00);
+        }
+        
+        .r-rs99b7 {
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-right-width: 1px;
+            border-top-width: 1px;
+        }
+        
+        .r-z2wwpe {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        
+        .r-18c69zk {
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+        }
+        
+        .r-1xc7w19 {
+            border-bottom-color: rgba(0, 0, 0, 1.00);
+            border-left-color: rgba(0, 0, 0, 1.00);
+            border-right-color: rgba(0, 0, 0, 1.00);
+            border-top-color: rgba(0, 0, 0, 1.00);
+        }
+        
+        .r-1phboty {
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-right-style: solid;
+            border-top-style: solid;
+        }
+        
+        .r-1yadl64 {
+            border-bottom-width: 0px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-top-width: 0px;
+        }
+        
+        .r-6koalj {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .r-crgep1 {
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+        }
+        
+        .r-t60dpp {
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
+        
+        .r-1udh08x {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        
+        .r-156hn8l {
+            border-bottom-color: rgba(211, 220, 228, 1.00);
+            border-left-color: rgba(211, 220, 228, 1.00);
+            border-right-color: rgba(211, 220, 228, 1.00);
+            border-top-color: rgba(211, 220, 228, 1.00);
+        }
+        
+        .r-190qawg {
+            border-bottom-color: rgba(227, 232, 237, 1.00);
+            border-left-color: rgba(227, 232, 237, 1.00);
+            border-right-color: rgba(227, 232, 237, 1.00);
+            border-top-color: rgba(227, 232, 237, 1.00);
+        }
+        
+        .r-nsbfu8 {
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+        }
+        
+        [stylesheet-group="2.1"] {}
+        
+        .r-ymttw5 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        
+        .r-mk0yit {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .r-1e081e0 {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        
+        .r-1pn2ns4 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        
+        .r-1yzf0co {
+            padding-bottom: 16px;
+            padding-top: 16px;
+        }
+        
+        .r-5njf8e {
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+        
+        .r-pw2am6 {
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+        
+        .r-1h4fu65 {
+            padding-bottom: 24px;
+            padding-top: 24px;
+        }
+        
+        .r-1guathk {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        
+        .r-oyd9sg {
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+        
+        .r-1r5su4o {
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+        
+        [stylesheet-group="2.2"] {}
+        
+        .r-12vffkv>* {
+            pointer-events: auto;
+        }
+        
+        .r-12vffkv {
+            pointer-events: none!important;
+        }
+        
+        .r-14lw9ot {
+            background-color: rgba(255, 255, 255, 1.00);
+        }
+        
+        .r-1d9grui {
+            border-bottom-color: rgba(211, 220, 228, 1.00);
+        }
+        
+        .r-qklmqi {
+            border-bottom-width: 1px;
+        }
+        
+        .r-1i7sdiz {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .r-1quu1zo {
+            ;
+        }
+        
+        .r-184en5c {
+            z-index: 1;
+        }
+        
+        .r-18u37iz {
+            -ms-flex-direction: row;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+        
+        .r-1awozwy {
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        
+        .r-eafdt9 {
+            -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+        }
+        
+        .r-1i6wzkk {
+            -moz-transition-property: opacity;
+            -webkit-transition-property: opacity;
+            transition-property: opacity;
+        }
+        
+        .r-lrvibr {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        .r-1loqt21 {
+            cursor: pointer;
+        }
+        
+        .r-1otgn73 {
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+        }
+        
+        .r-18kxxzh {
+            -ms-flex-positive: 0;
+            -webkit-box-flex: 0;
+            -webkit-flex-grow: 0;
+            flex-grow: 0;
+        }
+        
+        .r-1777fci {
+            -ms-flex-pack: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        
+        .r-1ny4l3l {
+            outline-style: none;
+        }
+        
+        .r-eu3ka {
+            height: 40px;
+        }
+        
+        .r-1bnj018 {
+            color: rgba(92, 105, 117, 1.00);
+        }
+        
+        .r-1kb76zh {
+            margin-right: 8px;
+        }
+        
+        .r-1aockid {
+            width: 40px;
+        }
+        
+        .r-h7gdob {
+            color: currentColor;
+        }
+        
+        .r-11vxtcu {
+            background-color: rgba(211, 220, 228, 1.00);
+        }
+        
+        .r-92ng3h {
+            width: 1px;
+        }
+        
+        .r-1ro0kt6 {
+            -ms-flex-preferred-size: 0%;
+            -webkit-flex-basis: 0%;
+            flex-basis: 0%;
+        }
+        
+        .r-16y2uox {
+            -ms-flex-positive: 1;
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+        }
+        
+        .r-1wbh5a2 {
+            -ms-flex-negative: 1;
+            -webkit-flex-shrink: 1;
+            flex-shrink: 1;
+        }
+        
+        .r-1habvwh {
+            -ms-flex-align: start;
+            -webkit-align-items: flex-start;
+            -webkit-box-align: start;
+            align-items: flex-start;
+        }
+        
+        .r-puj83k {
+            padding-left: 24px;
+        }
+        
+        .r-1pyaxff {
+            padding-right: 8px;
+        }
+        
+        .r-mabqd8 {
+            height: 32px;
+        }
+        
+        .r-1jkjb {
+            margin-left: 8px;
+        }
+        
+        .r-gg6oyi {
+            font-family: gitbook-content-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+        
+        .r-1b43r93 {
+            font-size: 14px;
+        }
+        
+        .r-majxgm {
+            font-weight: 500;
+        }
+        
+        .r-hbpseb {
+            line-height: 22px;
+        }
+        
+        .r-homxoj {
+            color: inherit;
+        }
+        
+        .r-1yvhtrz {
+            width: 32px;
+        }
+        
+        .r-1vu8cp1 {
+            background-color: rgba(243, 245, 246, 1.00);
+        }
+        
+        .r-g8m1yf {
+            border-right-color: rgba(211, 220, 228, 1.00);
+        }
+        
+        .r-13l2t4g {
+            border-right-width: 1px;
+        }
+        
+        .r-17s6mgv {
+            -ms-flex-pack: end;
+            -webkit-box-pack: end;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+        }
+        
+        .r-1ipicw7 {
+            width: 300px;
+        }
+        
+        .r-eqz5dr {
+            -ms-flex-direction: column;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+        
+        .r-4dj0k7 {
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+        }
+        
+        .r-sga3zk {
+            height: 64px;
+        }
+        
+        .r-1kihuf0 {
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            -webkit-align-self: center;
+            align-self: center;
+        }
+        
+        .r-150rngu {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .r-11yh6sk {
+            overflow-x: hidden;
+        }
+        
+        .r-1rnoaur {
+            overflow-y: auto;
+        }
+        
+        .r-1sncvnh {
+            -webkit-transform: translateZ(0px);
+            transform: translateZ(0px);
+        }
+        
+        .r-1sc18lr {
+            padding-bottom: 88px;
+        }
+        
+        .r-1p0dtai {
+            bottom: 0px;
+        }
+        
+        .r-u8s1d {
+            position: absolute;
+        }
+        
+        .r-13qz1uu {
+            width: 100%;
+        }
+        
+        .r-10ptun7 {
+            height: 16px;
+        }
+        
+        .r-1vckr1u {
+            background-color: rgba(245, 247, 249, 1.00);
+        }
+        
+        .r-1uwl36a {
+            background-color: rgba(233, 237, 242, 1.00);
+        }
+        
+        .r-1rasi3h {
+            color: rgba(136, 153, 168, 1.00);
+        }
+        
+        .r-1qhn6m8 {
+            padding-left: 16px;
+        }
+        
+        .r-nwxazl {
+            line-height: 40px;
+        }
+        
+        .r-b88u0q {
+            font-weight: 700;
+        }
+        
+        .r-ubezar {
+            font-size: 16px;
+        }
+        
+        .r-16dba41 {
+            font-weight: 400;
+        }
+        
+        .r-135wba7 {
+            line-height: 24px;
+        }
+        
+        .r-1x0taeo {
+            color: rgba(54, 58, 57, 1.00);
+        }
+        
+        .r-1oszu61 {
+            -ms-flex-align: stretch;
+            -webkit-align-items: stretch;
+            -webkit-box-align: stretch;
+            align-items: stretch;
+        }
+        
+        .r-deolkf {
+            box-sizing: border-box;
+        }
+        
+        .r-1mlwlqe {
+            -ms-flex-preferred-size: auto;
+            -webkit-flex-basis: auto;
+            flex-basis: auto;
+        }
+        
+        .r-1q142lx {
+            -ms-flex-negative: 0;
+            -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+        }
+        
+        .r-ifefl9 {
+            min-height: 0px;
+        }
+        
+        .r-bcqeeo {
+            min-width: 0px;
+        }
+        
+        .r-bnwqim {
+            position: relative;
+        }
+        
+        .r-417010 {
+            z-index: 0;
+        }
+        
+        .r-15ysp7h {
+            min-height: 32px;
+        }
+        
+        .r-12zb1j4 {
+            margin-right: 7px;
+        }
+        
+        .r-8jnfel {
+            min-height: -webkit-min-content;
+            min-height: -moz-min-content;
+            min-height: min-content;
+        }
+        
+        .r-1ygmrgt {
+            padding-top: 24px;
+        }
+        
+        .r-1ifxtd0 {
+            margin-bottom: 16px;
+        }
+        
+        .r-1nf4jbm {
+            color: rgba(59, 69, 78, 1.00);
+        }
+        
+        .r-1xnzce8 {
+            -moz-user-select: -webkit-text;
+            -moz-user-select: text;
+            -ms-user-select: -webkit-text;
+            -ms-user-select: text;
+            -webkit-user-select: -webkit-text;
+            -webkit-user-select: text;
+            user-select: -webkit-text;
+            user-select: text;
+        }
+        
+        .r-nzcix3 {
+            border-bottom-color: rgba(227, 232, 237, 1.00);
+        }
+        
+        .r-11c0sde {
+            margin-top: 24px;
+        }
+        
+        .r-1dqbpge {
+            cursor: -webkit-text;
+            cursor: text;
+        }
+        
+        .r-1d2f490 {
+            left: 0px;
+        }
+        
+        .r-zchlnj {
+            right: 0px;
+        }
+        
+        .r-1sdbnja {
+            top: -40px;
+        }
+        
+        .r-tskmnb {
+            padding-top: 8px;
+        }
+        
+        .r-xd6kpl {
+            padding-bottom: 8px;
+        }
+        
+        .r-fdjqy7 {
+            text-align: left;
+        }
+        
+        .r-95jzfe {
+            padding-top: 16px;
+        }
+        
+        .r-1l7z4oj {
+            padding-bottom: 16px;
+        }
+        
+        .r-q4m81j {
+            text-align: center;
+        }
+        
+        .r-1enofrn {
+            font-size: 12px;
+        }
+        
+        .r-14yzgew {
+            line-height: 18px;
+        }
+        
+        .r-wk8lta {
+            padding-top: 0px;
+        }
+        
+        .r-iphfwy {
+            padding-bottom: 4px;
+        }
+        
+        .r-1m04atk {
+            padding-left: 8px;
+        }
+        
+        .r-1mdbw0j {
+            padding-bottom: 0px;
+        }
+        
+        .r-1h8ys4a {
+            padding-top: 4px;
+        }
+        
+        .r-36ujnk {
+            font-style: italic;
+        }
+        
+        .r-1p5i0ed {
+            bottom: -24px;
+        }
+        
+        .r-1472mwg {
+            height: 24px;
+        }
+        
+        .r-1yv4afn {
+            border-top-color: rgba(227, 232, 237, 1.00);
+        }
+        
+        .r-5kkj8d {
+            border-top-width: 1px;
+        }
+        
+        .r-k200y {
+            -ms-flex-item-align: start;
+            -webkit-align-self: flex-start;
+            align-self: flex-start;
+        }
+        
+        .r-icyqz7 {
+            max-height: calc(100vh - 88px);
+        }
+        
+        .r-gtdqiz {
+            position: -webkit-sticky;
+            position: sticky;
+        }
+        
+        .r-eqo98v {
+            top: 24px;
+        }
+        
+        .r-1mkpi1y {
+            max-width: max(50%, 300px);
+        }
+        
+        .r-dvzwsg {
+            border-left-color: rgba(211, 220, 228, 1.00);
+        }
+        
+        .r-1ljd8xs {
+            border-left-width: 1px;
+        }
+        
+        .r-hu79xy {
+            min-width: 196px;
+        }
+        
+        .r-1peese0 {
+            margin-bottom: 24px;
+        }
+        
+        .r-dnmrzs {
+            max-width: 100%;
+        }
+        
+        .r-7xmw5f {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+        
+        .r-6wscbn {
+            max-width: 252px;
+        }
+        
+        .r-1h0z5md {
+            -ms-flex-pack: start;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+        
+        .r-88pszg {
+            margin-right: 16px;
+        }
+        
+        .r-1niwhzg {
+            background-color: rgba(0, 0, 0, 0.00);
+        }
+        
+        .r-vvn4in {
+            background-position: center;
+        }
+        
+        .r-u6sd8q {
+            background-repeat: no-repeat;
+        }
+        
+        .r-4gszlv {
+            background-size: cover;
+        }
+        
+        .r-1pi2tsx {
+            height: 100%;
+        }
+        
+        .r-ipm5af {
+            top: 0px;
+        }
+        
+        .r-1wyyakw {
+            z-index: -1;
+        }
+        
+        .r-1sxrcry {
+            background-size: auto;
+        }
+        
+        .r-19r33im {
+            letter-spacing: 1.2px;
+        }
+        
+        .r-tsynxw {
+            text-transform: uppercase;
+        }
+        
+        .r-1ow6zhx {
+            margin-left: 16px;
+        }
+        
+        .r-11wrixw {
+            margin-left: 0px;
+        }
+        
+        .r-lrsllp {
+            width: 24px;
+        }
+        
+        [stylesheet-group="10"] {}
+        
+        [data-rnw-media-class="1504__1505"] {
+            height: 80px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49534852959549534853px) {
+            [data-rnw-media-class="1504__1505"] {
+                height: 64px;
+            }
+        }
+        
+        [data-rnw-media-class="visible__hidden"] {
+            display: none;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.118105115105981081019595104105100100101110px) {
+            [data-rnw-media-class="visible__hidden"] {
+                display: flex;
+            }
+        }
+        
+        [data-rnw-media-class="hidden__visible"] {
+            display: flex;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.104105100100101110959511810511510598108101px) {
+            [data-rnw-media-class="hidden__visible"] {
+                display: none;
+            }
+        }
+        
+        [data-rnw-media-class="_visible_hidden"] {
+            display: none;
+        }
+        
+        @media (max-width: 1024px) and (max-width: 9999999.951181051151059810810195104105100100101110px) {
+            [data-rnw-media-class="_visible_hidden"] {
+                display: flex;
+            }
+        }
+        
+        [data-rnw-media-class="_hidden_1503"] {
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+        
+        @media (max-width: 1024px) and (max-width: 9999999.951041051001001011109549534851px) {
+            [data-rnw-media-class="_hidden_1503"] {
+                display: none;
+            }
+        }
+        
+        [data-rnw-media-class="1502__1kbfcbz"] {
+            width: max(220px, calc(100vw - max(300px, calc((100vw - 910px) / 2 - 0px)) - 750px - 80px - 80px - 0px));
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49534850959549107981029998122px) {
+            [data-rnw-media-class="1502__1kbfcbz"] {
+                width: auto;
+            }
+        }
+        
+        [data-rnw-media-class="188__187"] {
+            -ms-flex-direction: row;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.4956569595495655px) {
+            [data-rnw-media-class="188__187"] {
+                -ms-flex-direction: column;
+                -webkit-box-direction: normal;
+                -webkit-box-orient: vertical;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+        
+        [data-rnw-media-class="hidden__visible_b1430-visible"] {
+            display: flex;
+        }
+        
+        @media (max-width: 1430px) and (max-width: 9999999.1041051001001011109595118105115105981081019598495251484511810511510598108101px) {
+            [data-rnw-media-class="hidden__visible_b1430-visible"] {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.1041051001001011109595118105115105981081019598495251484511810511510598108101px) {
+            [data-rnw-media-class="hidden__visible_b1430-visible"] {
+                display: none;
+            }
+        }
+        
+        [data-rnw-media-class="1464__1465"] {
+            border-right-width: 0px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49525452959549525453px) {
+            [data-rnw-media-class="1464__1465"] {
+                border-right-width: 1px;
+            }
+        }
+        
+        [data-rnw-media-class="1451-1456-__1451-1454-"] {
+            margin-right: 80px;
+            max-width: 910px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49525349454952535445959549525349454952535245px) {
+            [data-rnw-media-class="1451-1456-__1451-1454-"] {
+                margin-right: 16px;
+                max-width: 910px;
+            }
+        }
+        
+        [data-rnw-media-class="1430__1431"] {
+            height: 56px;
+            width: 80px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49525148959549525149px) {
+            [data-rnw-media-class="1430__1431"] {
+                height: 36px;
+                min-width: 16px;
+                width: auto;
+            }
+        }
+        
+        [data-rnw-media-class="229__227"] {
+            font-family: gitbook-content-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 56px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.5050579595505055px) {
+            [data-rnw-media-class="229__227"] {
+                font-family: gitbook-content-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 36px;
+            }
+        }
+        
+        [data-rnw-media-class="1433__1432"] {
+            margin-left: 80px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.49525151959549525150px) {
+            [data-rnw-media-class="1433__1432"] {
+                margin-left: 16px;
+            }
+        }
+        
+        [data-rnw-media-class="1455__1453-127"] {
+            margin-left: 80px;
+            padding-bottom: 40px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.4952535395954952535145495055px) {
+            [data-rnw-media-class="1455__1453-127"] {
+                margin-left: 16px;
+            }
+        }
+        
+        [data-rnw-media-class="hidden__1kbfcbz_b1430-hidden"] {
+            width: max(220px, calc(100vw - max(300px, calc((100vw - 910px) / 2 - 0px)) - 750px - 80px - 80px - 0px));
+        }
+        
+        @media (max-width: 1430px) and (max-width: 9999999.10410510010010111095954910798102999812295984952514845104105100100101110px) {
+            [data-rnw-media-class="hidden__1kbfcbz_b1430-hidden"] {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.10410510010010111095954910798102999812295984952514845104105100100101110px) {
+            [data-rnw-media-class="hidden__1kbfcbz_b1430-hidden"] {
+                display: none;
+            }
+        }
+        
+        [data-rnw-media-class="1502-95-196__7mwae0-123-197"] {
+            -ms-flex-pack: end;
+            -webkit-box-pack: end;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            padding-left: 24px;
+            padding-right: 24px;
+            width: max(300px, calc((100vw - 910px) / 2 - 0px));
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.495348504557534549575495955510911997101484549505145495755px) {
+            [data-rnw-media-class="1502-95-196__7mwae0-123-197"] {
+                -ms-flex-pack: start;
+                -webkit-box-pack: start;
+                -webkit-justify-content: flex-start;
+                justify-content: flex-start;
+                padding-left: 0px;
+                padding-right: 0px;
+                width: auto;
+            }
+        }
+        
+        [data-rnw-media-class="230__229"] {
+            font-family: gitbook-content-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 36px;
+        }
+        
+        @media (max-width: 700px) and (max-width: 9999999.5051489595505057px) {
+            [data-rnw-media-class="230__229"] {
+                font-family: gitbook-content-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+            }
+        }
+        
+        [data-rnw-media-class="__187_b910-188"] {
+            -ms-flex-direction: row;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+        
+        @media (max-width: 910px) and (max-width: 9999999.9595495655959857494845495656px) {
+            [data-rnw-media-class="__187_b910-188"] {
+                -ms-flex-direction: column;
+                -webkit-box-direction: normal;
+                -webkit-box-orient: vertical;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+        
+        [stylesheet-group="20"] {}
+        
+        body:not(.dragging) [data-rnw-int-class="button___698_"]:hover,
+        body:not(.dragging) [data-rnw-int-class="button___698_"]:focus {
+            background-color: rgba(245, 247, 249, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="button___698_"]:hover [data-rnw-int-class="nearest___700_"],
+        body:not(.dragging) [data-rnw-int-class="button___698_"]:focus [data-rnw-int-class="nearest___700_"] {
+            color: rgba(92, 105, 117, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="button___577_"]:hover [data-rnw-int-class="nearest___578-5959_"],
+        body:not(.dragging) [data-rnw-int-class="button___577_"]:focus [data-rnw-int-class="nearest___578-5959_"] {
+            color: rgba(54, 58, 57, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___1483_"]:hover,
+        body:not(.dragging) [data-rnw-int-class="nearest___1483_"]:focus {
+            color: rgba(52, 109, 219, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___1483_"]:hover [data-rnw-int-class="nearest___1483_"],
+        body:not(.dragging) [data-rnw-int-class="nearest___1483_"]:focus [data-rnw-int-class="nearest___1483_"] {
+            color: rgba(52, 109, 219, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___884-5966_"]:hover,
+        body:not(.dragging) [data-rnw-int-class="nearest___884-5966_"]:focus {
+            color: rgba(0, 0, 0, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest__1466__"]:hover {
+            background-color: rgba(233, 237, 242, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest____"]:hover [data-rnw-int-class="nearest___260-5955_"],
+        body:not(.dragging) [data-rnw-int-class="nearest____"]:focus [data-rnw-int-class="nearest___260-5955_"] {
+            color: rgba(54, 58, 57, 1.00);
+        }
+        
+        [data-rnw-int-class="nearest_246__260-5955_"] {
+            color: rgba(59, 69, 78, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest____"]:hover [data-rnw-int-class="nearest_246__260-5955_"],
+        body:not(.dragging) [data-rnw-int-class="nearest____"]:focus [data-rnw-int-class="nearest_246__260-5955_"] {
+            color: rgba(54, 58, 57, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___843-5980_"]:hover,
+        body:not(.dragging) [data-rnw-int-class="nearest___843-5980_"]:focus {
+            border-bottom-color: rgba(54, 58, 57, 1.00);
+            border-left-color: rgba(54, 58, 57, 1.00);
+            border-right-color: rgba(54, 58, 57, 1.00);
+            border-top-color: rgba(54, 58, 57, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___843-5980_"]:hover [data-rnw-int-class="nearest___260-5955_"],
+        body:not(.dragging) [data-rnw-int-class="nearest___843-5980_"]:focus [data-rnw-int-class="nearest___260-5955_"] {
+            color: rgba(54, 58, 57, 1.00);
+        }
+        
+        body:not(.dragging) [data-rnw-int-class="nearest___843-5980_"]:hover [data-rnw-int-class="nearest__260-5955__"] {
+            color: rgba(54, 58, 57, 1.00);
+        }
+    </style>
+    <script type="text/javascript" defer src="https://cdn.iframe.ly/embed.js" async></script>
+    <script type="text/javascript" defer src="https://cdn.polyfill.io/v2/polyfill.js?features=Intl.~locale.en" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="gitbook-root">
+        <div class="css-1dbjc4n r-13awgt0 r-12vffkv" data-reactroot="">
+            <div class="css-1dbjc4n r-13awgt0 r-12vffkv">
+                <div data-rnw-media-class="1504__1505" class="css-1dbjc4n r-1awozwy r-14lw9ot r-1d9grui r-qklmqi r-1i7sdiz r-1quu1zo r-18u37iz r-184en5c">
+                    <div aria-label="Show Table of Content" data-rnw-media-class="visible__hidden" data-rnw-int-class="button___698_" tabindex="0" class="css-1dbjc4n r-1awozwy r-42olwf r-18c69zk r-rs99b7 r-1bnj018 r-1loqt21 r-18u37iz r-18kxxzh r-eu3ka r-1777fci r-1kb76zh r-1ny4l3l r-mk0yit r-1otgn73 r-1i6wzkk r-lrvibr r-1aockid"
+                        style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___700_" class="r-h7gdob" style="height:18px;vertical-align:middle;width:18px"><path d="M3 12h18M3 6h18M3 18h18"></path></svg></div>
+                    <a href="/the-dynasty/" data-rnw-int-class="nearest____" data-rnw-media-class="1502-95-196__7mwae0-123-197" class="css-4rbku5 css-1dbjc4n r-1awozwy r-1loqt21 r-18u37iz r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s"
+                        data-testid="public.headerHomeLink">
+                        <div class="css-1dbjc4n r-1awozwy r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-1h0z5md r-6wscbn">
+                            <div class="css-1dbjc4n">
+                                <div data-rnw-media-class="hidden__visible" class="css-1dbjc4n">
+                                    <div class="css-1dbjc4n r-1awozwy r-z2wwpe r-18u37iz r-eu3ka r-1777fci r-88pszg r-1aockid" style="overflow-x:hidden;overflow-y:hidden">
+                                        <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2 r-1udh08x r-13qz1uu r-417010" style="height:100%">
+                                            <div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-1sxrcry r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image:url(&quot;https://www.gitbook.com/cdn-cgi/image/width=40,height=40,fit=contain,dpr=1,format=auto/https%3A%2F%2Fthe-dynasty.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f&quot;)"></div><img alt="" draggable="false" src="https://www.gitbook.com/cdn-cgi/image/width=40,height=40,fit=contain,dpr=1,format=auto/https%3A%2F%2Fthe-dynasty.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f"
+                                                class="css-9pa8cd" /></div>
+                                    </div>
+                                </div>
+                                <div data-rnw-media-class="visible__hidden" class="css-1dbjc4n">
+                                    <div class="css-1dbjc4n r-1awozwy r-z2wwpe r-18u37iz r-1472mwg r-1777fci r-88pszg r-1udh08x" style="width:24px">
+                                        <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2 r-1pi2tsx r-1udh08x r-13qz1uu r-417010">
+                                            <div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-1sxrcry r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image:url(&quot;https://www.gitbook.com/cdn-cgi/image/width=24,height=24,fit=contain,dpr=1,format=auto/https%3A%2F%2Fthe-dynasty.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f&quot;)"></div><img alt="" draggable="false" src="https://www.gitbook.com/cdn-cgi/image/width=24,height=24,fit=contain,dpr=1,format=auto/https%3A%2F%2Fthe-dynasty.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f"
+                                                class="css-9pa8cd" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div dir="auto" data-rnw-media-class="230__229" class="css-901oao"><span aria-label="The Dynasty" data-rnw-int-class="nearest_246__260-5955_" class="css-901oao css-16my406 css-vcwn7f">The Dynasty</span></div>
+                        </div>
+                    </a>
+                    <div data-rnw-media-class="hidden__visible" class="css-1dbjc4n r-11vxtcu r-eu3ka r-92ng3h" style="margin-left:-1px"></div>
+                    <div data-rnw-media-class="_visible_hidden" class="css-1dbjc4n r-1awozwy r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2"></div>
+                    <div data-rnw-media-class="_hidden_1503" class="css-1dbjc4n r-1awozwy r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2"><a href="/the-dynasty/game-play/game-play" dir="auto" aria-label="How To Play" data-rnw-int-class="nearest___884-5966_" class="css-4rbku5 css-901oao css-cens5h r-1x0taeo r-1loqt21 r-gg6oyi r-ubezar r-majxgm r-135wba7 r-ymttw5" style="-webkit-line-clamp:2">How To Play</a>
+                        <a href="https://www.thedynasty.app" dir="auto" aria-label="Play Now" data-rnw-int-class="nearest___884-5966_" class="css-4rbku5 css-901oao css-cens5h r-1x0taeo r-1loqt21 r-gg6oyi r-ubezar r-majxgm r-135wba7 r-ymttw5" style="-webkit-line-clamp:2">Play Now</a>
+                        <a href="https://t.me/thedynastybsc" dir="auto" aria-label="Telegram" data-rnw-int-class="nearest___884-5966_" class="css-4rbku5 css-901oao css-cens5h r-1x0taeo r-1loqt21 r-gg6oyi r-ubezar r-majxgm r-135wba7 r-ymttw5" style="-webkit-line-clamp:2">Telegram</a>
+                        <a href="https://twitter.com/Thedynasty_app" dir="auto" aria-label="Twitter" data-rnw-int-class="nearest___884-5966_" class="css-4rbku5 css-901oao css-cens5h r-1x0taeo r-1loqt21 r-gg6oyi r-ubezar r-majxgm r-135wba7 r-ymttw5" style="-webkit-line-clamp:2">Twitter</a>
+                    </div>
+                    <div data-rnw-media-class="hidden__visible" class="css-1dbjc4n r-11vxtcu r-eu3ka r-92ng3h" style="margin-right:-1px"></div>
+                    <div data-rnw-media-class="1502__1kbfcbz" class="css-1dbjc4n">
+                        <div class="css-1dbjc4n r-1habvwh r-1ro0kt6 r-16y2uox r-1wbh5a2 r-puj83k r-1pyaxff">
+                            <div data-rnw-media-class="hidden__visible" class="css-1dbjc4n">
+                                <div data-rnw-int-class="button___577_" tabindex="0" class="css-1dbjc4n r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-1bnj018 r-1loqt21 r-18u37iz r-18kxxzh r-mabqd8 r-1777fci r-1ny4l3l r-mk0yit r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___578-5959_" class="r-h7gdob" style="height:16px;vertical-align:middle;width:16px"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 4a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM2 10.5a8.5 8.5 0 1117 0 8.5 8.5 0 01-17 0z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.093 15.093a1 1 0 011.414 0l5.2 5.2a1 1 0 01-1.414 1.414l-5.2-5.2a1 1 0 010-1.414z" fill="currentColor"></path></svg>
+                                    <div class="css-1dbjc4n r-16y2uox r-1wbh5a2 r-1jkjb">
+                                        <div dir="auto" data-rnw-int-class="nearest___578-5959_" class="css-901oao css-vcwn7f r-h7gdob r-gg6oyi r-1b43r93 r-majxgm r-hbpseb">Search…</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-rnw-media-class="visible__hidden" class="css-1dbjc4n">
+                                <div data-rnw-int-class="button___577_" tabindex="0" class="css-1dbjc4n r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-1bnj018 r-1loqt21 r-18u37iz r-18kxxzh r-mabqd8 r-1777fci r-1ny4l3l r-mk0yit r-1otgn73 r-1i6wzkk r-lrvibr r-1yvhtrz" style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___578-5959_" class="r-h7gdob" style="height:16px;vertical-align:middle;width:16px"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 4a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM2 10.5a8.5 8.5 0 1117 0 8.5 8.5 0 01-17 0z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.093 15.093a1 1 0 011.414 0l5.2 5.2a1 1 0 01-1.414 1.414l-5.2-5.2a1 1 0 010-1.414z" fill="currentColor"></path></svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-rnw-media-class="188__187" class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2">
+                    <div data-rnw-media-class="hidden__visible_b1430-visible" class="css-1dbjc4n r-1vu8cp1 r-g8m1yf r-13l2t4g r-18u37iz r-17s6mgv" style="width:max(300px, calc((100vw - 910px) / 2 - 0px))">
+                        <div class="css-1dbjc4n r-eqz5dr r-1ipicw7">
+                            <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2 r-puj83k">
+                                <div data-rnw-media-class="visible__hidden" class="css-1dbjc4n r-14lw9ot r-1d9grui r-qklmqi r-4dj0k7 r-1quu1zo r-18u37iz r-sga3zk r-17s6mgv">
+                                    <div data-rnw-int-class="button___577_" tabindex="0" class="css-1dbjc4n r-1awozwy r-1kihuf0 r-42olwf r-z2wwpe r-rs99b7 r-1bnj018 r-1loqt21 r-18u37iz r-18kxxzh r-eu3ka r-1777fci r-1ny4l3l r-mk0yit r-1otgn73 r-1i6wzkk r-lrvibr r-1aockid" style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___578-5959_" class="r-h7gdob"
+                                            style="height:18px;vertical-align:middle;width:18px"><path d="M18 6L6 18M6 6l12 12"></path></svg></div>
+                                </div>
+                                <div class="css-1dbjc4n r-150rngu r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-1sncvnh">
+                                    <div class="css-1dbjc4n r-1sc18lr r-1yzf0co">
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <a href="/the-dynasty/" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest____" class="css-4rbku5 css-1dbjc4n r-1awozwy r-14lw9ot r-156hn8l r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                    <div dir="auto" class="css-901oao r-1x0taeo r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Welcome To The Dynasty Ecosystem</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">INTRODUCTION</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-1dbjc4n r-11wrixw r-bnwqim">
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/s/whitepaper" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Whitepaper</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/s/why-the-dynasty" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Why The Dynasty ?</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/s/usddyt-token" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">$DYT Token</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/s/mission" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Vision &amp; Mission</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">DYNASTY GAME</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-1dbjc4n r-11wrixw r-bnwqim">
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/game-play/play-to-earn" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">P2E Features</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/game-play/nft-game" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">NFT Game</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/game-play/story" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Story</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/game-play/game-play" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Game Play</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz">
+                                                                <div data-rnw-int-class="button___577_" tabindex="0" class="css-1dbjc4n r-1awozwy r-42olwf r-z2wwpe r-rs99b7 r-1bnj018 r-1loqt21 r-18u37iz r-18kxxzh r-1472mwg r-1777fci r-1ny4l3l r-mk0yit r-1otgn73 r-1i6wzkk r-lrvibr r-lrsllp" style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___578-5959_"
+                                                                        class="r-h7gdob r-10ptun7" style="vertical-align:middle;width:16px"><path d="M9 18l6-6-6-6"></path></svg></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/game-play/reward" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Reward</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">METAVERSE</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-1dbjc4n r-11wrixw r-bnwqim">
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/metaverse/virtual-dynasty" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Virtual Dynasty</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">DYNASTY WALLET</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <a href="/the-dynasty/staking" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                    <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Staking</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <a href="/the-dynasty/farming" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                    <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Farming</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">DYNASTY LAUNCHPAD</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-1r5su4o r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <div data-rnw-int-class="nearest____" data-rnw-media-class="1464__1465" class="css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-18u37iz r-15ysp7h r-ymttw5">
+                                                    <div dir="auto" class="css-901oao r-1rasi3h r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1enofrn r-majxgm r-19r33im r-14yzgew r-5njf8e r-tsynxw">INFORMATION</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-1dbjc4n r-11wrixw r-bnwqim">
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/information/audits" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Audits</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/information/roadmap" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Roadmap</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/information/tokenomic" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Tokenomics</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/information/community" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Community</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                    <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                        <a href="/the-dynasty/information/team-and-partners" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                            style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                            <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">Team &amp; Partners</div>
+                                                            <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                            <div class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                <a href="https://thedynasty.app" data-rnw-media-class="1464__1465" data-rnw-int-class="nearest__1466__" class="css-4rbku5 css-1dbjc4n r-1awozwy r-42olwf r-rs99b7 r-1loqt21 r-18u37iz r-15ysp7h r-ymttw5 r-1otgn73 r-1i6wzkk r-lrvibr" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                    <div dir="auto" class="css-901oao r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb r-5njf8e">thedynasty.app</div>
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz"></div>
+                                                    <div class="css-1dbjc4n r-1jkjb r-12zb1j4"><svg viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" class="r-1rasi3h" style="height:18px;vertical-align:middle;width:18px"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.5a.5.5 0 01.5-.5H6v1H2v12h12v-4h1v4.5a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5v-13zM9 1h5.5a.5.5 0 01.5.5V7h-1V2H9V1z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.556 9.736l8.59-8.59.708.708-8.59 8.59-.708-.708z" fill="currentColor"></path></svg></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-1dbjc4n r-1p0dtai r-u8s1d r-13qz1uu r-184en5c">
+                                <div class="css-1dbjc4n r-10ptun7" style="background-image:linear-gradient(3.141592653589793rad,#F5F7F900,#F5F7F9)"></div>
+                                <div class="css-1dbjc4n r-1vckr1u r-ymttw5"><a href="https://www.gitbook.com/?utm_source=content&amp;utm_medium=trademark&amp;utm_campaign=-Mjo2ABTnR_fSGc4r-lv" data-rnw-int-class="nearest___1483_" class="css-4rbku5 css-1dbjc4n r-1uwl36a r-z2wwpe r-1rasi3h r-1loqt21 r-18u37iz r-ymttw5 r-5njf8e r-1otgn73 r-1i6wzkk r-lrvibr"
+                                        style="-webkit-transition-duration:0s;transition-duration:0s"><svg viewBox="0 0 512 512" fill="none" preserveAspectRatio="xMidYMid meet" class="r-eu3ka r-1aockid" style="vertical-align:middle"><path fill-rule="evenodd" clip-rule="evenodd" d="M230.434 379.554c8.259 0 14.978 6.719 14.978 14.974 0 8.256-6.719 14.974-14.978 14.974-8.255 0-14.974-6.718-14.974-14.974 0-8.255 6.719-14.974 14.974-14.974zm235.189-92.758c-8.259 0-14.978-6.719-14.978-14.974 0-8.259 6.719-14.978 14.978-14.978 8.255 0 14.974 6.719 14.974 14.978 0 8.255-6.719 14.974-14.974 14.974zm0-61.351c-25.571 0-46.377 20.805-46.377 46.377 0 4.979.827 9.938 2.46 14.757L268.502 368.13c-8.704-12.543-22.812-19.979-38.068-19.979-17.676 0-33.791 10.113-41.586 25.924L51.211 301.514c-14.54-7.646-25.425-31.595-24.27-53.392.598-11.371 4.53-20.196 10.511-23.604 3.8-2.157 8.37-1.968 13.214.57l.92.485c36.464 19.212 155.822 82.079 160.844 84.413 7.757 3.586 12.069 5.041 25.279-1.222l246.723-128.317c3.615-1.365 7.832-4.83 7.832-10.091 0-7.3-7.546-10.177-7.568-10.177-14.026-6.729-35.601-16.827-56.639-26.676-44.965-21.055-95.933-44.919-118.318-56.639-19.323-10.116-34.877-1.59-37.65.135l-5.39 2.667C165.965 129.482 31.154 196.248 23.479 200.917 9.735 209.28 1.224 225.94.122 246.625c-1.722 32.789 15.007 66.969 38.916 79.512l145.536 75.057c3.279 22.709 22.827 39.712 45.86 39.712 25.337 0 45.992-20.425 46.374-45.672l160.292-86.87a46.41 46.41 0 0028.523 9.835c25.571 0 46.377-20.806 46.377-46.377 0-25.572-20.806-46.377-46.377-46.377z" fill="currentColor"></path></svg><div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2 r-1qhn6m8"><div dir="auto" data-rnw-int-class="nearest___1483_" class="css-901oao r-1rasi3h r-nwxazl">Powered By <span class="css-901oao css-16my406 r-b88u0q">GitBook</span></div></div></a></div>
+                                <div class="css-1dbjc4n r-10ptun7" style="background-image:linear-gradient(3.141592653589793rad,#F5F7F9,#F5F7F900)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="css-1dbjc4n r-14lw9ot r-13awgt0">
+                        <div class="css-1dbjc4n r-150rngu r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-1sncvnh">
+                            <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2 r-8jnfel">
+                                <div class="css-1dbjc4n r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2">
+                                    <div class="css-1dbjc4n r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-1777fci">
+                                        <div data-rnw-media-class="1451-1456-__1451-1454-" class="css-1dbjc4n r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2">
+                                            <div class="css-1dbjc4n r-eqz5dr r-1ifxtd0 r-1ygmrgt">
+                                                <div class="css-1dbjc4n r-18u37iz">
+                                                    <div data-rnw-media-class="1430__1431" class="css-1dbjc4n r-1awozwy r-18u37iz r-17s6mgv"></div>
+                                                    <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2">
+                                                        <div dir="auto" data-rnw-media-class="229__227" class="css-901oao r-1nf4jbm r-1xnzce8" data-testid="page.title">Welcome To The Dynasty Ecosystem</div>
+                                                    </div>
+                                                </div>
+                                                <div data-rnw-media-class="1433__1432" class="css-1dbjc4n r-nzcix3 r-qklmqi r-11c0sde"></div>
+                                            </div>
+                                            <div data-rnw-media-class="1455__1453-127" class="css-1dbjc4n">
+                                                <div class="css-1dbjc4n r-bnwqim">
+                                                    <div tabindex="0" class="css-1dbjc4n r-1dqbpge r-eu3ka r-1d2f490 r-u8s1d r-zchlnj r-1sdbnja"></div>
+                                                    <div data-testid="page.contentEditor" data-slate-editor="true" data-key="62e9d1a071ad4b7a9171aaea870b2578" autoCorrect="on" spellcheck="true" data-gramm="false" style="outline:none;white-space:pre-wrap;word-wrap:break-word">
+                                                        <div>
+                                                            <div data-key="bb1cc8b5393c4920b497c68c2791dbaf" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-xd6kpl r-tskmnb r-1yzf0co r-bnwqim r-417010">
+                                                                <div data-block-content="bb1cc8b5393c4920b497c68c2791dbaf" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="8b671af5a5f04c26ae9e43e7e7c814d4"><strong data-slate-leaf="true" data-offset-key="8b671af5a5f04c26ae9e43e7e7c814d4:0" class="r-b88u0q">Dear friends. </strong></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div data-slate-void="true" data-key="9dd6579bbd6f4e3a94caa67eaf27abcd">
+                                                                <div>
+                                                                    <div data-key="9dd6579bbd6f4e3a94caa67eaf27abcd" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1l7z4oj r-95jzfe r-1yzf0co r-bnwqim r-417010">
+                                                                        <div data-block-content="9dd6579bbd6f4e3a94caa67eaf27abcd" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                            <div>
+                                                                                <div>
+                                                                                    <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://cdn.iframe.ly/Op4TdAx" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *;"></iframe></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="css-1dbjc4n r-tskmnb r-bnwqim r-q4m81j">
+                                                                                <div data-key="801d74bf8ab14a399619f287d5a59e5e" data-fragment="true" data-slate-editor="true">
+                                                                                    <div data-key="522743a920e24a37a69b43a8e2b065cf" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                                        <div dir="auto" class="css-901oao r-1rasi3h r-gg6oyi r-1enofrn r-16dba41 r-14yzgew r-q4m81j r-1xnzce8"><span data-key="188f524e82164f84baf83a3a44baf1c2"><span data-offset-key="188f524e82164f84baf83a3a44baf1c2:0">&#x27;&#x27;PLAY TO EARN&quot; NOT &quot;CICK TO EARN&quot;</span></span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div data-key="964024d969924c5bb55f5e90809cdb4f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-xd6kpl r-tskmnb r-1yzf0co r-bnwqim r-417010">
+                                                                <div data-block-content="964024d969924c5bb55f5e90809cdb4f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="63b7f74373a64f249de26e1a9c3308f5"><strong data-slate-leaf="true" data-offset-key="63b7f74373a64f249de26e1a9c3308f5:0" class="r-b88u0q"><span data-slate-zero-width="n">​</span></strong>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div data-key="bd3995b766a541bdb7256abc2ac755f0" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-xd6kpl r-tskmnb r-1yzf0co r-bnwqim r-417010">
+                                                                <div data-block-content="bd3995b766a541bdb7256abc2ac755f0" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="5387266ed88f445489a6ca64e0e09082"><strong data-slate-leaf="true" data-offset-key="5387266ed88f445489a6ca64e0e09082:0" class="r-b88u0q">The Dynasty is a startup company founded with the goal of building a complete and strong ecosystem. The Dynasty will first develop with 3 main areas as following:</strong></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <ul data-key="7277673eea6e44c39a64d12d9dbed236" class="css-4rbku5 r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1l7z4oj r-95jzfe r-1yzf0co r-bnwqim r-417010">
+                                                                <li data-key="b10ffd0be19a40e4a2bd6188dcc889e7" class="css-4rbku5 r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-iphfwy r-wk8lta r-1yzf0co r-bnwqim r-417010">
+                                                                    <div data-block-content="b10ffd0be19a40e4a2bd6188dcc889e7" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                        <div contenteditable="false" class="r-1awozwy r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-18u37iz r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1m04atk r-1pyaxff r-bnwqim r-417010" style="height:24px"><svg viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="height:12px;vertical-align:middle;width:12px"><path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="currentColor" fill-rule="evenodd"></path></svg></div>
+                                                                        <div class="css-1dbjc4n r-13awgt0">
+                                                                            <div data-key="769c8e622bbb4e3eab647a4d62203d02" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1mdbw0j r-wk8lta r-1yzf0co r-bnwqim r-417010">
+                                                                                <div data-block-content="769c8e622bbb4e3eab647a4d62203d02" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="16c0d3d41d9d48d3b5a252513cb75b67"><strong data-slate-leaf="true" data-offset-key="16c0d3d41d9d48d3b5a252513cb75b67:0" class="r-b88u0q">NFT  game platform</strong><span data-offset-key="16c0d3d41d9d48d3b5a252513cb75b67:1">: At the moment, there are many games on the market and mostly Click_to_earn with boring gameplay, simple content, unsustainable development and after a short time will be declined. Grasping this weakness and with the desire to bring a fresh breath to the blockchain game market, our team has researched and developed a game that promises to be much more attractive for you to explore. An actual PLAY_TO_EARN game. A beautiful NFT collection. A fair play mechanism, transparent, with an extremely attractive gameplay. Your ability to make money will depend on your skills and mindset. The better you are, the more rewards you will earn. Super appealing monthly rewards and ranking mode for those who contribute and lead. The game is developed on many platforms: Mobile, IOS, Android and Facebook Play platform.</span>
+                                                                                        <strong data-slate-leaf="true" data-offset-key="16c0d3d41d9d48d3b5a252513cb75b67:2" class="r-b88u0q">
+
+                                                                                    </strong>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li data-key="4211c0012cd04be0907595d503dafb04" class="css-4rbku5 r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-iphfwy r-1h8ys4a r-1yzf0co r-bnwqim r-417010">
+                                                                    <div data-block-content="4211c0012cd04be0907595d503dafb04" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                        <div contenteditable="false" class="r-1awozwy r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-18u37iz r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1m04atk r-1pyaxff r-bnwqim r-417010" style="height:24px"><svg viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="height:12px;vertical-align:middle;width:12px"><path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="currentColor" fill-rule="evenodd"></path></svg></div>
+                                                                        <div class="css-1dbjc4n r-13awgt0">
+                                                                            <div data-key="c7dfc8ad993a4bd9831b19b1998ff05d" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1mdbw0j r-wk8lta r-1yzf0co r-bnwqim r-417010">
+                                                                                <div data-block-content="c7dfc8ad993a4bd9831b19b1998ff05d" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="cf7c032d3e504b67beeb687fa539a7fb"><strong data-slate-leaf="true" data-offset-key="cf7c032d3e504b67beeb687fa539a7fb:0" class="r-b88u0q">Staking and Earn platform</strong><span data-offset-key="cf7c032d3e504b67beeb687fa539a7fb:1"> on the wallet that The Dynasty developed: combined with the strength of the DeFi market and the potential of NFT. The Dynasty will have an Earn function that allows players to do Farming and Staking with NFT and DYT right on The Dynasty&#x27;s wallet.
+
+</span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li data-key="a95d1a4583c24f4fb2add84cdf419218" class="css-4rbku5 r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1mdbw0j r-1h8ys4a r-1yzf0co r-bnwqim r-417010">
+                                                                    <div data-block-content="a95d1a4583c24f4fb2add84cdf419218" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                        <div contenteditable="false" class="r-1awozwy r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-18u37iz r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1m04atk r-1pyaxff r-bnwqim r-417010" style="height:24px"><svg viewBox="0 0 8 16" preserveAspectRatio="xMidYMid meet" class="r-1nf4jbm" style="height:12px;vertical-align:middle;width:12px"><path d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="currentColor" fill-rule="evenodd"></path></svg></div>
+                                                                        <div class="css-1dbjc4n r-13awgt0">
+                                                                            <div data-key="bddafddf682a44fc931988f4ab14cc5f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-1mdbw0j r-wk8lta r-1yzf0co r-bnwqim r-417010">
+                                                                                <div data-block-content="bddafddf682a44fc931988f4ab14cc5f" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="3dbda1cb0b364ec787eeab31f6cc1a75"><strong data-slate-leaf="true" data-offset-key="3dbda1cb0b364ec787eeab31f6cc1a75:0" class="r-b88u0q">IDO/ PRESALE Launchpad Platform</strong><span data-offset-key="3dbda1cb0b364ec787eeab31f6cc1a75:1">: Leveraging the large number of available Users who play The Dynasty game from Website, Apps and Facebook play platforms - The Dynasty Launchpad Platform will help DYT holders optimize their profits, helping The DYT coins they hold to get more and more valuable with the right to participate in IDO and Presale for DYT Holders. We will focus on our strengths to select and connect Gaming, NFT, Marketplace, Multichain projects to bridge the release.</span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div>
+                                                            <div data-key="5c594a42018249708b94e22a0cb23146" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-xd6kpl r-tskmnb r-1yzf0co r-bnwqim r-417010">
+                                                                <div data-block-content="5c594a42018249708b94e22a0cb23146" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="43c47b01631e4661a2b0eb7b193030f7"><span data-offset-key="43c47b01631e4661a2b0eb7b193030f7:0"><span data-slate-zero-width="n">​</span></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div data-key="affafd8363ee485fb279a7423372d7d5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1mlwlqe r-eqz5dr r-1q142lx r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-xd6kpl r-tskmnb r-1yzf0co r-bnwqim r-417010">
+                                                                <div data-block-content="affafd8363ee485fb279a7423372d7d5" class="r-1oszu61 r-1xc7w19 r-1phboty r-1yadl64 r-deolkf r-6koalj r-1ro0kt6 r-eqz5dr r-16y2uox r-1wbh5a2 r-crgep1 r-ifefl9 r-bcqeeo r-t60dpp r-bnwqim r-417010">
+                                                                    <div dir="auto" class="css-901oao r-1nf4jbm r-gg6oyi r-ubezar r-16dba41 r-135wba7 r-fdjqy7 r-1xnzce8"><span data-key="17e972082af241068677cfbc4ee79de0"><em data-slate-leaf="true" data-offset-key="17e972082af241068677cfbc4ee79de0:0" class="r-36ujnk">The Dynasty Teams.</em></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div tabindex="0" class="css-1dbjc4n r-1p5i0ed r-1dqbpge r-1472mwg r-1d2f490 r-u8s1d r-zchlnj"></div>
+                                                </div>
+                                                <div data-rnw-media-class="__187_b910-188" class="css-1dbjc4n r-11c0sde">
+                                                    <a href="/the-dynasty/s/whitepaper" data-rnw-media-class="__" data-rnw-int-class="nearest___843-5980_" class="css-4rbku5 css-1dbjc4n r-1awozwy r-14lw9ot r-190qawg r-z2wwpe r-rs99b7 r-4dj0k7 r-1loqt21 r-1quu1zo r-1ro0kt6 r-18u37iz r-16y2uox r-1wbh5a2 r-nsbfu8 r-1otgn73 r-1i6wzkk r-lrvibr"
+                                                        style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                        <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2">
+                                                            <div class="css-1dbjc4n">
+                                                                <div dir="auto" class="css-901oao r-1rasi3h r-gg6oyi r-1enofrn r-16dba41 r-14yzgew">Next
+                                                                    <!-- -->- INTRODUCTION</div>
+                                                            </div>
+                                                            <div dir="auto" data-rnw-int-class="nearest___260-5955_" class="css-901oao css-vcwn7f r-1nf4jbm r-gg6oyi r-ubezar r-majxgm r-135wba7">Whitepaper</div>
+                                                        </div>
+                                                        <div class="css-1dbjc4n r-1ow6zhx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest__260-5955__"
+                                                                class="r-1rasi3h r-1472mwg r-lrsllp" style="vertical-align:middle"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
+                                                    </a>
+                                                </div>
+                                                <div class="css-1dbjc4n r-1yv4afn r-5kkj8d r-11c0sde r-1ygmrgt">
+                                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz">
+                                                        <div class="css-1dbjc4n r-1ro0kt6 r-16y2uox r-1wbh5a2">
+                                                            <div dir="auto" class="css-901oao r-1rasi3h r-gg6oyi r-1b43r93 r-majxgm r-hbpseb">Last modified <span aria-label="2021-10-05 18:51 UTC" class="css-901oao css-16my406">2mo ago</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-rnw-media-class="hidden__1kbfcbz_b1430-hidden" class="css-1dbjc4n r-k200y r-pw2am6 r-icyqz7 r-1mkpi1y r-1rnoaur r-1h4fu65 r-gtdqiz r-eqo98v">
+                                        <div class="css-1dbjc4n r-dvzwsg r-1ljd8xs r-1peese0 r-hu79xy">
+                                            <div class="css-1dbjc4n r-1mdbw0j r-wk8lta">
+                                                <div data-rnw-int-class="nearest____" tabindex="0" class="css-1dbjc4n r-1awozwy r-1loqt21 r-18u37iz r-dnmrzs r-1guathk r-oyd9sg r-1otgn73 r-1i6wzkk r-lrvibr r-7xmw5f" style="-webkit-transition-duration:0s;transition-duration:0s">
+                                                    <div class="css-1dbjc4n r-1kb76zh"><svg viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" data-rnw-int-class="nearest___260-5955_" class="r-1rasi3h r-10ptun7" style="vertical-align:middle;width:16px"><path d="M14.11 6.6l-.16-.09c-.042.343-.13.68-.26 1A3 3 0 0115 10a3 3 0 01-3 3H8a3 3 0 010-6h.82A3 3 0 009 6H8a4 4 0 000 8h4a4 4 0 002.11-7.4z" fill="currentColor"></path><path d="M1.89 9.4l.16.09c.042-.343.13-.68.26-1A3 3 0 011 6a3 3 0 013-3h4a3 3 0 110 6h-.82A3 3 0 007 10h1a4 4 0 000-8H4a4 4 0 00-2.11 7.4z" fill="currentColor"></path></svg></div>
+                                                    <div dir="auto" data-rnw-int-class="nearest___260-5955_" class="css-901oao css-vcwn7f r-1bnj018 r-1ro0kt6 r-16y2uox r-1wbh5a2 r-gg6oyi r-1b43r93 r-majxgm r-hbpseb">Copy link</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Rendered with GitBook 10.1.10-4c0fda6a7c7e20d42785c6b39c80c8a19905d2bf-1545082450
+        // Space -Mjo2ABTnR_fSGc4r-lv
+
+        window.__GITBOOK_INITIAL_PROPS__ = "{\"hostname\":\"the-dynasty.gitbook.io\",\"basePath\":\"the-dynasty\",\"assetHostname\":\"https://app.gitbook.com\",\"space\":{\"primaryColor\":\"#363A39\",\"font\":\"Roboto\",\"title\":\"The Dynasty\",\"createdBy\":\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\",\"indexedRevision\":\"es6GDqgT1IfwVrzrmG1r\",\"hasPDFExport\":false,\"changeRequests\":134,\"organization\":\"-Mjo08GaMVHERF3R-2Tj\",\"hasPublicFeedback\":true,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"seconds\":1633968517,\"nanoseconds\":226000000},\"count\":7}},\"draftChangeRequests\":10,\"searchKeyVersion\":1,\"key\":\"-Mjo2ABTnR_fSGc4r-lv\",\"iconURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Ficon%2FZeCADsgoOxvgZhTVCsKo%2FLogo%20Dynasty-512x512-2.jpg?alt=media&token=74a7e7b9-79ca-4143-a253-955fb0d72e2f\",\"path\":\"the-dynasty\",\"openChangeRequests\":2,\"revision\":\"es6GDqgT1IfwVrzrmG1r\",\"searchKey\":\"NTY1NTc4OGIxNmI3ZDUwZDExYTRkMzgwZjhiMGUwZjkzMTBjNmM4ZTM0YzY1OTFlNzdkMmQ5OGI4MGQ4ZmQ4ZGZpbHRlcnM9KHZpZXdhYmxlQnlQdWJsaWNTcGFjZXMlM0EtTWpvMkFCVG5SX2ZTR2M0ci1sdi0xKSUyMEFORCUyMHByb2plY3RJZCUzQWdpdGJvb2steC1wcm9k\",\"editMode\":\"locked\",\"headerLinks\":[{\"to\":{\"kind\":\"page\",\"page\":\"-MjrWdIHSDPyIy-MlJoi\"},\"title\":\"How To Play\"},{\"title\":\"Play Now\",\"to\":{\"kind\":\"url\",\"url\":\"https://www.thedynasty.app/\"}},{\"to\":{\"kind\":\"url\",\"url\":\"https://t.me/thedynastybsc\"},\"title\":\"Telegram\"},{\"to\":{\"url\":\"https://twitter.com/Thedynasty_app\",\"kind\":\"url\"},\"title\":\"Twitter\"}],\"orderIndex\":\"0|hzzz3b:\",\"hideTrademark\":false,\"comments\":{},\"visibility\":\"public\",\"defaultPermission\":\"inherit\",\"createdAt\":{\"seconds\":1631887078,\"nanoseconds\":174000000},\"headerTheme\":\"light\"}}";
+        window.__GITBOOK_INITIAL_STATE__ = "{\"firestore\":{\"spaces/-Mjo2ABTnR_fSGc4r-lv\":{\"primaryColor\":\"#363A39\",\"font\":\"Roboto\",\"title\":\"The Dynasty\",\"createdBy\":\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\",\"indexedRevision\":\"es6GDqgT1IfwVrzrmG1r\",\"hasPDFExport\":false,\"changeRequests\":134,\"organization\":\"-Mjo08GaMVHERF3R-2Tj\",\"hasPublicFeedback\":true,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633968517,\"nanoseconds\":226000000},\"count\":7}},\"draftChangeRequests\":10,\"searchKeyVersion\":1,\"key\":\"-Mjo2ABTnR_fSGc4r-lv\",\"iconURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Ficon%2FZeCADsgoOxvgZhTVCsKo%2FLogo%20Dynasty-512x512-2.jpg?alt=media&token=74a7e7b9-79ca-4143-a253-955fb0d72e2f\",\"path\":\"the-dynasty\",\"openChangeRequests\":2,\"revision\":\"es6GDqgT1IfwVrzrmG1r\",\"searchKey\":\"NTY1NTc4OGIxNmI3ZDUwZDExYTRkMzgwZjhiMGUwZjkzMTBjNmM4ZTM0YzY1OTFlNzdkMmQ5OGI4MGQ4ZmQ4ZGZpbHRlcnM9KHZpZXdhYmxlQnlQdWJsaWNTcGFjZXMlM0EtTWpvMkFCVG5SX2ZTR2M0ci1sdi0xKSUyMEFORCUyMHByb2plY3RJZCUzQWdpdGJvb2steC1wcm9k\",\"editMode\":\"locked\",\"headerLinks\":[{\"to\":{\"kind\":\"page\",\"page\":\"-MjrWdIHSDPyIy-MlJoi\"},\"title\":\"How To Play\"},{\"title\":\"Play Now\",\"to\":{\"kind\":\"url\",\"url\":\"https://www.thedynasty.app/\"}},{\"to\":{\"kind\":\"url\",\"url\":\"https://t.me/thedynastybsc\"},\"title\":\"Telegram\"},{\"to\":{\"url\":\"https://twitter.com/Thedynasty_app\",\"kind\":\"url\"},\"title\":\"Twitter\"}],\"orderIndex\":\"0|hzzz3b:\",\"hideTrademark\":false,\"comments\":{\"__type\":\"object\"},\"visibility\":\"public\",\"defaultPermission\":\"inherit\",\"createdAt\":{\"__type\":\"timestamp\",\"seconds\":1631887078,\"nanoseconds\":174000000},\"headerTheme\":\"light\"},\"spaces/-Mjo2ABTnR_fSGc4r-lv/revisions/es6GDqgT1IfwVrzrmG1r\":{\"space\":\"-Mjo2ABTnR_fSGc4r-lv\",\"pages\":{\"-MjrWdIHSDPyIy-MlJoi\":{\"pages\":[\"nd7Cf4Nef7h0Fr8Jn8Nx\",\"-Ml0Uc38qHBZONFVT-UN\",\"-Ml0UyoIq3ISQgo-xMy5\",\"-Ml0UVby3zVgv0q7xk6S\",\"fQAo9dqZpO5789xHzzRQ\",\"dpwTP0VhKCukk12bHi61\",\"-Ml0VzUvu9zfqu61DNMH\",\"d1fOs95YvLqalY34njV5\",\"eB5NsZOMA9kFx4b157IJ\",\"mfND7iNbyP7LgR6U0vXV\",\"AKqLjCdHabhOtzgeYhLO\"],\"title\":\"Game Play\",\"path\":\"game-play\",\"kind\":\"sheet\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":50,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634198803,\"nanoseconds\":102000000}},\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":5,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633681958,\"nanoseconds\":49000000}}},\"description\":\"Guide &  feature Update\",\"sheet\":\"EHZC4G4bPU2qrXJB9rJ4\",\"key\":\"-MjrWdIHSDPyIy-MlJoi\"},\"a5NXSsKJNpfX0bp90yRb\":{\"key\":\"a5NXSsKJNpfX0bp90yRb\",\"title\":\"Reward\",\"description\":\"\",\"kind\":\"sheet\",\"pages\":{\"__type\":\"array\"},\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788439,\"nanoseconds\":651000000},\"count\":3}},\"sheet\":\"b5iISGaBhwQ1EmQWTNdE\"},\"mfND7iNbyP7LgR6U0vXV\":{\"title\":\"Market\",\"kind\":\"sheet\",\"sheet\":\"5TIqHs0VM9iqD7GbhXRB\",\"key\":\"mfND7iNbyP7LgR6U0vXV\",\"pages\":{\"__type\":\"array\"},\"description\":\"\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634611627,\"nanoseconds\":589000000},\"count\":5}}},\"-MjrW0e3IAWWHmhnzXm3\":{\"path\":\"mission\",\"title\":\"Vision & Mission\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633668252,\"nanoseconds\":781000000},\"count\":8}},\"sheet\":\"6qVyOYujMBMox8MUHVdr\",\"key\":\"-MjrW0e3IAWWHmhnzXm3\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"description\":\"Our future\"},\"nwRClmkoCnoPmJKny4QA\":{\"sheet\":\"w0ouDp7biKOBvx9i7hpz\",\"key\":\"nwRClmkoCnoPmJKny4QA\",\"kind\":\"sheet\",\"pages\":{\"__type\":\"array\"},\"description\":\"\",\"title\":\"Virtual Dynasty\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":9,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635791245,\"nanoseconds\":521000000}}}},\"dpwTP0VhKCukk12bHi61\":{\"description\":\"\",\"key\":\"dpwTP0VhKCukk12bHi61\",\"title\":\"Arena ( PVP modes )\",\"sheet\":\"7wCibSdcyrDaJqwyVBzJ\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215352,\"nanoseconds\":312000000},\"count\":5}}},\"-MjrXQnBZRNY7sCxBl8L\":{\"kind\":\"sheet\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":9,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633354447,\"nanoseconds\":227000000}}},\"title\":\"Community\",\"description\":\"Community is the most important part of the project , join us and build the strongest , enthusiastic , explosive The Dynasty community .\",\"sheet\":\"7VGuHyMfaP4FysJilpTL\",\"key\":\"-MjrXQnBZRNY7sCxBl8L\",\"pages\":{\"__type\":\"array\"},\"path\":\"community\"},\"-MjrXG5uCcBUAqnLPGz7\":{\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":122,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636009586,\"nanoseconds\":215000000}}},\"title\":\"Tokenomics\",\"sheet\":\"F7sakro4Aw2OtMxUBjEM\",\"description\":\"\",\"path\":\"tokenomic\",\"key\":\"-MjrXG5uCcBUAqnLPGz7\"},\"-MjrUAHr1m7A8vzT6HH2\":{\"key\":\"-MjrUAHr1m7A8vzT6HH2\",\"path\":\"s\",\"title\":\"INTRODUCTION\",\"kind\":\"group\",\"pages\":[\"-MjrUAHsJpoYiaU7jITg\",\"-Mju5YccVpZYt8DiweE5\",\"ojKaCYarj3UlILawIunr\",\"-MjrW0e3IAWWHmhnzXm3\"],\"edits\":{\"__type\":\"object\"}},\"-MjrX3A3FirPGQoZeygk\":{\"pages\":[\"-MjrX3A42BW_vnW46D-o\",\"-MjrXBSkx8l_UlRblXFZ\",\"-MjrXG5uCcBUAqnLPGz7\",\"-MjrXQnBZRNY7sCxBl8L\",\"-MjrX_Rk_rFVfdQhViB3\"],\"path\":\"information\",\"title\":\"INFORMATION\",\"kind\":\"group\",\"key\":\"-MjrX3A3FirPGQoZeygk\",\"edits\":{\"__type\":\"object\"}},\"-MjrUqFlQJ9FKNOJUc_O\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212766,\"nanoseconds\":505000000}},\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633629083,\"nanoseconds\":832000000},\"count\":3}},\"title\":\"P2E Features\",\"sheet\":\"m1UyTPCFfdV5Cm5KzRqT\",\"path\":\"play-to-earn\",\"pages\":{\"__type\":\"array\"},\"key\":\"-MjrUqFlQJ9FKNOJUc_O\",\"kind\":\"sheet\",\"description\":\"PLAY_TO_EARN\"},\"fQAo9dqZpO5789xHzzRQ\":{\"title\":\"Raid ( PVE modes )\",\"key\":\"fQAo9dqZpO5789xHzzRQ\",\"sheet\":\"JQ6wpWC0FYhoPobvVhUu\",\"description\":\"\",\"pages\":{\"__type\":\"array\"},\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":7,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634356757,\"nanoseconds\":973000000}}},\"kind\":\"sheet\"},\"-Ml0Uc38qHBZONFVT-UN\":{\"sheet\":\"cdJ1DzuRnkvThcWf6fYW\",\"kind\":\"sheet\",\"title\":\"Character system\",\"pages\":{\"__type\":\"array\"},\"key\":\"-Ml0Uc38qHBZONFVT-UN\",\"path\":\"character-system-1\",\"description\":\"BACKGROUND with different stories, skills and powers will be updated regularly according to the game's progress.\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":3,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633644780,\"nanoseconds\":912000000}},\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215319,\"nanoseconds\":44000000},\"count\":2}}},\"GgTJddio2DKuAgpts0Cf\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":22,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636219796,\"nanoseconds\":550000000}}},\"key\":\"GgTJddio2DKuAgpts0Cf\",\"sheet\":\"LvUFjk5C6XM4LkpLV83N\",\"description\":\"\",\"title\":\"Staking\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\"},\"-Ml0VzUvu9zfqu61DNMH\":{\"pages\":{\"__type\":\"array\"},\"sheet\":\"1FaM8CAQ0SKcaR4wRMUs\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633216159,\"nanoseconds\":237000000}},\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215352,\"nanoseconds\":312000000},\"count\":1}},\"title\":\"Map system\",\"kind\":\"sheet\",\"key\":\"-Ml0VzUvu9zfqu61DNMH\",\"description\":\"\",\"path\":\"map-system\"},\"AKqLjCdHabhOtzgeYhLO\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":4,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215395,\"nanoseconds\":461000000}}},\"sheet\":\"0g7lpdVYfY9rnrxvJmSH\",\"kind\":\"sheet\",\"key\":\"AKqLjCdHabhOtzgeYhLO\",\"description\":\"\",\"pages\":{\"__type\":\"array\"},\"title\":\"Ranking\"},\"-MjrWdIGSE4I9Z_-xbUZ\":{\"key\":\"-MjrWdIGSE4I9Z_-xbUZ\",\"title\":\"DYNASTY GAME\",\"path\":\"game-play\",\"pages\":[\"-MjrUqFlQJ9FKNOJUc_O\",\"-MjrUqqfH4w4JdmF09EE\",\"-Ml0UN28qcvm4lrgoj76\",\"-MjrWdIHSDPyIy-MlJoi\",\"a5NXSsKJNpfX0bp90yRb\"],\"kind\":\"group\",\"edits\":{\"__type\":\"object\"}},\"-MjrX3A42BW_vnW46D-o\":{\"pages\":{\"__type\":\"array\"},\"description\":\"\",\"path\":\"audits\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636688227,\"nanoseconds\":264000000},\"count\":6}},\"title\":\"Audits\",\"sheet\":\"BBGvF7XGkJYSCXptjEIG\",\"key\":\"-MjrX3A42BW_vnW46D-o\",\"kind\":\"sheet\"},\"-MlE1wjusEbzSecm3Jg1\":{\"pages\":{\"__type\":\"array\"},\"title\":\"DYNASTY LAUNCHPAD\",\"edits\":{\"__type\":\"object\"},\"kind\":\"group\",\"key\":\"-MlE1wjusEbzSecm3Jg1\",\"path\":\"dynasty-launchpad\"},\"-MlSBAZ2E8Cffmuk87sj\":{\"kind\":\"link\",\"title\":\"thedynasty.app\",\"ref\":{\"url\":\"https://thedynasty.app/\",\"kind\":\"url\"},\"edits\":{\"__type\":\"object\"},\"key\":\"-MlSBAZ2E8Cffmuk87sj\"},\"-Ml0UyoIq3ISQgo-xMy5\":{\"title\":\"Skill system\",\"pages\":{\"__type\":\"array\"},\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215326,\"nanoseconds\":672000000}},\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215284,\"nanoseconds\":899000000}}},\"description\":\"\",\"path\":\"skill-system\",\"kind\":\"sheet\",\"sheet\":\"EbUhzUE0DmYSlPUuKoSa\",\"key\":\"-Ml0UyoIq3ISQgo-xMy5\"},\"eB5NsZOMA9kFx4b157IJ\":{\"description\":\"Item Enhancement\",\"pages\":{\"__type\":\"array\"},\"key\":\"eB5NsZOMA9kFx4b157IJ\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215360,\"nanoseconds\":970000000},\"count\":6}},\"title\":\"Blacksmith\",\"kind\":\"sheet\",\"sheet\":\"2NR4GzlGCS4bcYkjvl9T\"},\"-Ml0UN28qcvm4lrgoj76\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212766,\"nanoseconds\":467000000},\"count\":1}},\"key\":\"-Ml0UN28qcvm4lrgoj76\",\"path\":\"story\",\"sheet\":\"tbKEJbh1O4jrTCLNWuVe\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"title\":\"Story\",\"description\":\"\"},\"-MlE1ijMibtXwxCvl1An\":{\"title\":\"DYNASTY WALLET\",\"edits\":{\"__type\":\"object\"},\"path\":\"dynasty-wallet\",\"key\":\"-MlE1ijMibtXwxCvl1An\",\"kind\":\"group\",\"pages\":{\"__type\":\"array\"}},\"d1fOs95YvLqalY34njV5\":{\"description\":\"\",\"title\":\"Tavern - Quest game\",\"key\":\"d1fOs95YvLqalY34njV5\",\"kind\":\"sheet\",\"sheet\":\"1O7McYzJFnl0Qmq0xx7D\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":4,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215357,\"nanoseconds\":359000000}}},\"pages\":{\"__type\":\"array\"}},\"JKTIYoNWNSUiTZ5bO8bb\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635759894,\"nanoseconds\":328000000},\"count\":2}},\"path\":\"\",\"kind\":\"group\",\"title\":\"METAVERSE\",\"key\":\"JKTIYoNWNSUiTZ5bO8bb\",\"pages\":[\"nwRClmkoCnoPmJKny4QA\"]},\"-MjrUqqfH4w4JdmF09EE\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":5,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215177,\"nanoseconds\":274000000}}},\"description\":\"\",\"kind\":\"sheet\",\"path\":\"nft-game\",\"title\":\"NFT Game\",\"pages\":{\"__type\":\"array\"},\"sheet\":\"0QA7XBdXxEGnOkz6CEu8\",\"key\":\"-MjrUqqfH4w4JdmF09EE\"},\"ojKaCYarj3UlILawIunr\":{\"title\":\"$DYT Token\",\"pages\":{\"__type\":\"array\"},\"key\":\"ojKaCYarj3UlILawIunr\",\"sheet\":\"OZVx6QyvuJ5btU1a6XwY\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":12,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634875989,\"nanoseconds\":517000000}}},\"description\":\"\",\"kind\":\"sheet\"},\"-Mju5YccVpZYt8DiweE5\":{\"path\":\"why-the-dynasty\",\"sheet\":\"r3U1AZyXwFOAYy3homhW\",\"pages\":{\"__type\":\"array\"},\"key\":\"-Mju5YccVpZYt8DiweE5\",\"kind\":\"sheet\",\"description\":\"\",\"title\":\"Why The Dynasty ?\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":12,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634875101,\"nanoseconds\":137000000}}}},\"nd7Cf4Nef7h0Fr8Jn8Nx\":{\"title\":\"Summon Hero\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"description\":\"\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":5,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634215306,\"nanoseconds\":652000000}}},\"sheet\":\"IbJn6xTIN8so9D10OhqH\",\"key\":\"nd7Cf4Nef7h0Fr8Jn8Nx\"},\"-Mjo2C80oWVg9nMeM-fA\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633459869,\"nanoseconds\":894000000},\"count\":6}},\"title\":\"Welcome To The Dynasty Ecosystem\",\"kind\":\"sheet\",\"description\":\"\",\"key\":\"-Mjo2C80oWVg9nMeM-fA\",\"pages\":{\"__type\":\"array\"},\"path\":\"master\",\"sheet\":\"x7afEjuJo7obOYYa5xMy\"},\"-MjrX_Rk_rFVfdQhViB3\":{\"kind\":\"sheet\",\"key\":\"-MjrX_Rk_rFVfdQhViB3\",\"title\":\"Team & Partners\",\"path\":\"team-and-partners\",\"sheet\":\"AX08Os9233QJYhyojHPB\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":29,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636132465,\"nanoseconds\":428000000}}},\"pages\":{\"__type\":\"array\"},\"description\":\"\"},\"-Ml0UVby3zVgv0q7xk6S\":{\"title\":\"Items system\",\"key\":\"-Ml0UVby3zVgv0q7xk6S\",\"sheet\":\"1UzS7pNZFym8qsbHRl0F\",\"description\":\"\",\"kind\":\"sheet\",\"path\":\"weapon-system\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":2,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633681958,\"nanoseconds\":54000000}},\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":3,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788265,\"nanoseconds\":296000000}}},\"pages\":{\"__type\":\"array\"}},\"-MjrUAHsJpoYiaU7jITg\":{\"pages\":{\"__type\":\"array\"},\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633668252,\"nanoseconds\":543000000},\"count\":5}},\"kind\":\"sheet\",\"description\":\"Note & update\",\"sheet\":\"YqYmAxiz6sCFTrzr3ZAg\",\"title\":\"Whitepaper\",\"path\":\"whitepaper\",\"key\":\"-MjrUAHsJpoYiaU7jITg\"},\"ZFX4GHJjH7O0qG2cai2T\":{\"description\":\"\",\"title\":\"Farming\",\"sheet\":\"B9EGjODV69nPplEfnGy1\",\"pages\":{\"__type\":\"array\"},\"kind\":\"sheet\",\"key\":\"ZFX4GHJjH7O0qG2cai2T\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635791351,\"nanoseconds\":854000000},\"count\":5}}},\"-MjrXBSkx8l_UlRblXFZ\":{\"title\":\"Roadmap\",\"kind\":\"sheet\",\"description\":\"\",\"key\":\"-MjrXBSkx8l_UlRblXFZ\",\"path\":\"roadmap\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":12,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636461501,\"nanoseconds\":273000000}}},\"pages\":{\"__type\":\"array\"},\"sheet\":\"9i0OYPdXC0ZwPDvWgQp5\"}},\"mergedFrom\":\"vIlPNXhq8S9UWaAlzYDW\",\"activeAt\":{\"__type\":\"timestamp\",\"seconds\":1636688228,\"nanoseconds\":760000000},\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636688227,\"nanoseconds\":239000000},\"count\":1}},\"key\":\"es6GDqgT1IfwVrzrmG1r\",\"changeRequest\":{\"__type\":\"null\"},\"parents\":[\"jd1yoZ71Gm3ybkb08KYg\",\"TOFaJCkrZPxljjyMT1yu\"],\"createdAt\":{\"__type\":\"timestamp\",\"seconds\":1636688228,\"nanoseconds\":759000000},\"type\":\"merge\",\"rootPages\":[\"-Mjo2C80oWVg9nMeM-fA\",\"-MjrUAHr1m7A8vzT6HH2\",\"-MjrWdIGSE4I9Z_-xbUZ\",\"JKTIYoNWNSUiTZ5bO8bb\",\"-MlE1ijMibtXwxCvl1An\",\"GgTJddio2DKuAgpts0Cf\",\"ZFX4GHJjH7O0qG2cai2T\",\"-MlE1wjusEbzSecm3Jg1\",\"-MjrX3A3FirPGQoZeygk\",\"-MlSBAZ2E8Cffmuk87sj\"],\"files\":{\"9787jPzcpjoSaCfZ6lUi\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FJLavBmBhk67sJnRzdnar%2Flaunchzone-logo%201.png?alt=media&token=34f886ce-ea3b-4f4a-93c3-802dea0b05d0\",\"contentType\":\"image/png\",\"size\":7361,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761557,\"nanoseconds\":847000000},\"count\":1}},\"key\":\"9787jPzcpjoSaCfZ6lUi\",\"name\":\"launchzone-logo 1.png\"},\"AAXK0G6JkhaLmvWYKnLk\":{\"contentType\":\"image/jpeg\",\"key\":\"AAXK0G6JkhaLmvWYKnLk\",\"size\":754194,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F9S2JiAjkwDL6718sw262%2F9.jpg?alt=media&token=7b015329-7a52-40a9-95b0-1d4e58d5e72e\",\"name\":\"9.jpg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634324444,\"nanoseconds\":954000000}}}},\"-Ml2Es9HakkLa3Uqm4W0\":{\"name\":\"Aicap.jpg\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215811,\"nanoseconds\":712000000}}},\"size\":1531583,\"key\":\"-Ml2Es9HakkLa3Uqm4W0\",\"contentType\":\"image/jpeg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2Es9HakkLa3Uqm4W0%2FAicap.jpg?alt=media&token=a9667e19-4275-4c60-9084-683d3335b41a\"},\"NVgTn0e0LYSo617ts8hl\":{\"name\":\"Screenshot 2021-11-01 171653.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761818,\"nanoseconds\":355000000},\"count\":1}},\"key\":\"NVgTn0e0LYSo617ts8hl\",\"size\":21331,\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FswoTUfmK0MxhrLLyGvYa%2FScreenshot%202021-11-01%20171653.png?alt=media&token=719ab63f-d31e-4961-8662-d3052f31d01e\"},\"uZjhVgGs7JgMfWJE4Edn\":{\"key\":\"uZjhVgGs7JgMfWJE4Edn\",\"size\":1391188,\"name\":\"33 (3).jpg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635711049,\"nanoseconds\":747000000},\"count\":1}},\"contentType\":\"image/jpeg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FnXR7kKVDNMKkwfyjT69a%2F33%20(3).jpg?alt=media&token=b3c33a7e-eb8e-42a4-9b75-e45e6ebb70e1\"},\"5t6wLmQJGxHo57yhCukm\":{\"size\":15529,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761717,\"nanoseconds\":199000000},\"count\":1}},\"name\":\"Screenshot 2021-11-01 171508.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FJSGcmp1RHC7rv7qD3Gb1%2FScreenshot%202021-11-01%20171508.png?alt=media&token=4a18a61e-a4b6-4f2b-8948-7dcb260f02fe\",\"key\":\"5t6wLmQJGxHo57yhCukm\",\"contentType\":\"image/png\"},\"3ayBAz3noNraQcGKtXFG\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FLLR44TBMXpTL2mqqKgVM%2FScreenshot%202021-11-06%20000303.png?alt=media&token=e3a73871-5f2a-456b-a2e9-550336245c08\",\"name\":\"Screenshot 2021-11-06 000303.png\",\"size\":129558,\"contentType\":\"image/png\",\"key\":\"3ayBAz3noNraQcGKtXFG\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636131982,\"nanoseconds\":616000000}}}},\"OGcTTmpQNbKDFv6C7tpt\":{\"size\":115797,\"name\":\"Screenshot 2021-11-01 173951.png\",\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788636,\"nanoseconds\":631000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F8RUXjZYtOA3GRXXnaJy5%2FScreenshot%202021-11-01%20173951.png?alt=media&token=3ecb1683-3282-44cb-a0db-36a0e8bd9604\",\"key\":\"OGcTTmpQNbKDFv6C7tpt\"},\"-MlQrSr1nl9pmfGJjq-t\":{\"size\":405245,\"name\":\"Screenshot 2021-10-08 004701.png\",\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQnhdAf-STeqOYQq6R%2F-MlQrSr1nl9pmfGJjq-t%2FScreenshot%202021-10-08%20004701.png?alt=media&token=53027c77-7690-4a88-980b-24f73f686332\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633628842,\"nanoseconds\":89000000},\"count\":1}},\"key\":\"-MlQrSr1nl9pmfGJjq-t\"},\"-MlBTwIdD6dWLFHijFy-\":{\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBTwIdD6dWLFHijFy-%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=80d1cca0-6617-4faf-b059-55a107fd3f68\",\"size\":18288,\"contentType\":\"image/png\",\"edits\":{\"__type\":\"object\"},\"key\":\"-MlBTwIdD6dWLFHijFy-\"},\"-MlBUG5_sDcx0OemLcTc\":{\"key\":\"-MlBUG5_sDcx0OemLcTc\",\"size\":18845,\"contentType\":\"image/png\",\"name\":\"242132820_999517994222149_53273660477712052_n 1.png\",\"edits\":{\"__type\":\"object\"},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUG5_sDcx0OemLcTc%2F242132820_999517994222149_53273660477712052_n%201.png?alt=media&token=989cb98c-9910-4fd7-8d20-1b2ff5f15c1c\"},\"EdWPSbAJWgD3H0aiT6TY\":{\"name\":\"Screenshot 2021-11-06 000303.png\",\"key\":\"EdWPSbAJWgD3H0aiT6TY\",\"contentType\":\"image/png\",\"size\":129558,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FFLoskgW1TPGjhaX4zC9E%2FScreenshot%202021-11-06%20000303.png?alt=media&token=50cfd7c9-a08c-4bdf-a304-c592fe86f411\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636131857,\"nanoseconds\":513000000}}}},\"-Ml20aloJQAIfDbveDhM\":{\"key\":\"-Ml20aloJQAIfDbveDhM\",\"name\":\"P_02_Idle.gif\",\"size\":5280568,\"contentType\":\"image/gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212072,\"nanoseconds\":630000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml20aloJQAIfDbveDhM%2FP_02_Idle.gif?alt=media&token=79c19dd4-0e04-4b0d-b8e7-b2b769167134\"},\"br14mWHu0rvYHbrA37Jw\":{\"contentType\":\"image/jpeg\",\"key\":\"br14mWHu0rvYHbrA37Jw\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fl51EFoGn35fODUrNJsp7%2F250518634_676425526635015_7472946403676515709_n.jpg?alt=media&token=8a130088-28e9-4b53-9a47-6693d21bf213\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635933652,\"nanoseconds\":365000000}}},\"size\":182333,\"name\":\"250518634_676425526635015_7472946403676515709_n.jpg\"},\"KZz2fG66otjM8nis84iu\":{\"size\":116828,\"key\":\"KZz2fG66otjM8nis84iu\",\"name\":\"photo_2021-10-14_05-14-42.jpg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634191594,\"nanoseconds\":159000000},\"count\":1}},\"contentType\":\"image/jpeg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fy1F3HZSOv6jJ6kbZHj1X%2Fphoto_2021-10-14_05-14-42.jpg?alt=media&token=6cbd9db4-8e58-4ccf-8518-ce1e8c58be68\"},\"VSVbgZBsxkO5rCBG1kQf\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788381,\"nanoseconds\":748000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FTfNd51v1bf4G0TqRMUvQ%2FScreenshot%202021-11-01%20174305.png?alt=media&token=d49ba867-d0e4-47a7-96a6-0a56658c33f8\",\"size\":840843,\"key\":\"VSVbgZBsxkO5rCBG1kQf\",\"contentType\":\"image/png\",\"name\":\"Screenshot 2021-11-01 174305.png\"},\"-MlAKnXkbxP4za9pQOa0\":{\"contentType\":\"image/png\",\"key\":\"-MlAKnXkbxP4za9pQOa0\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633351582,\"nanoseconds\":868000000},\"count\":1}},\"name\":\"Screenshot 2021-10-04 194534.png\",\"size\":279357,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml9ouGKn4owCEpxwOjd%2F-MlAKnXkbxP4za9pQOa0%2FScreenshot%202021-10-04%20194534.png?alt=media&token=5439a501-8856-4ba6-bca3-b0f44099b2da\"},\"NSUCMeIC0K5qoxnOql53\":{\"name\":\"Screenshot 2021-10-08 003326 (1).png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FdBjA1IqXROuIpZ0IzC8e%2FScreenshot%202021-10-08%20003326%20(1).png?alt=media&token=08b81e0b-7a13-4c71-8b53-1fe579d8423e\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634874608,\"nanoseconds\":868000000},\"count\":1}},\"key\":\"NSUCMeIC0K5qoxnOql53\",\"size\":220628,\"contentType\":\"image/png\"},\"-Ml2FHWhOP0zXaYUpYuM\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215920,\"nanoseconds\":964000000}}},\"name\":\"BG_hylap-1.jpg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2FHWhOP0zXaYUpYuM%2FBG_hylap-1.jpg?alt=media&token=dce0269f-602b-48a1-8b7c-9b012065428e\",\"size\":2026531,\"key\":\"-Ml2FHWhOP0zXaYUpYuM\",\"contentType\":\"image/jpeg\"},\"-Ml1w4kDAFXQwb5qfXCn\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633210625,\"nanoseconds\":420000000},\"count\":1}},\"key\":\"-Ml1w4kDAFXQwb5qfXCn\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1w4kDAFXQwb5qfXCn%2F8.jpg?alt=media&token=92b3e18a-ca77-405e-912e-17bb0d99775e\",\"contentType\":\"image/jpeg\",\"name\":\"8.jpg\",\"size\":1574473},\"7eyV3cu6dVyCB0DYOyqT\":{\"contentType\":\"image/png\",\"size\":876307,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FrPoQH6LQETEJPWGFv0dm%2FScreenshot%202021-11-01%20170848.png?alt=media&token=5b54c7d3-8b87-47ee-bebc-1cc8680c9a1e\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761347,\"nanoseconds\":272000000},\"count\":1}},\"key\":\"7eyV3cu6dVyCB0DYOyqT\",\"name\":\"Screenshot 2021-11-01 170848.png\"},\"-MlROnX63MwzkSc1Q7Vb\":{\"name\":\"244723338_578486536829257_694173866565648170_n.gif\",\"key\":\"-MlROnX63MwzkSc1Q7Vb\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQsOopxoEYUMpiUiM2%2F-MlROnX63MwzkSc1Q7Vb%2F244723338_578486536829257_694173866565648170_n.gif?alt=media&token=5b69fc26-38ee-45af-a6a3-d457347d3df3\",\"size\":21432875,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633637849,\"nanoseconds\":963000000}}},\"contentType\":\"image/gif\"},\"-Ml2BNIPxsoKc1fAdHcd\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2BNIPxsoKc1fAdHcd%2FComp%201.gif?alt=media&token=98e81348-99e4-427a-b115-01629044a662\",\"contentType\":\"image/gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633214897,\"nanoseconds\":60000000}}},\"key\":\"-Ml2BNIPxsoKc1fAdHcd\",\"name\":\"Comp 1.gif\",\"size\":7491050},\"-MlBUMj6zU_QtX7XR_kt\":{\"contentType\":\"image/png\",\"key\":\"-MlBUMj6zU_QtX7XR_kt\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUMj6zU_QtX7XR_kt%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=0bc7c8dc-5785-4409-8795-9b84ea01573a\",\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"size\":18288,\"edits\":{\"__type\":\"object\"}},\"-Ml2Fha5xcgSHYVyb0gI\":{\"contentType\":\"image/jpeg\",\"name\":\"Hawaii.jpg\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633216031,\"nanoseconds\":28000000}}},\"key\":\"-Ml2Fha5xcgSHYVyb0gI\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2Fha5xcgSHYVyb0gI%2FHawaii.jpg?alt=media&token=b375fc62-2cd5-4070-b8f8-59ee0e3e636f\",\"size\":1602073},\"-MlRNgjP2x3ItkS4fVUB\":{\"size\":10898390,\"name\":\"244640487_670810860554587_4512603617475872575_n.gif\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQsOopxoEYUMpiUiM2%2F-MlRNgjP2x3ItkS4fVUB%2F244640487_670810860554587_4512603617475872575_n.gif?alt=media&token=36af071d-45bf-4778-bd94-53ce4af80f5c\",\"key\":\"-MlRNgjP2x3ItkS4fVUB\",\"contentType\":\"image/gif\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633637558,\"nanoseconds\":524000000}}}},\"-MlBTyq7vg3V2P-Kb7zO\":{\"edits\":{\"__type\":\"object\"},\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBTyq7vg3V2P-Kb7zO%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=186f08b1-170d-40fb-bed9-35fcbfe44705\",\"size\":18288,\"contentType\":\"image/png\",\"key\":\"-MlBTyq7vg3V2P-Kb7zO\"},\"-MlROSB6F71MIjbSMW1O\":{\"key\":\"-MlROSB6F71MIjbSMW1O\",\"contentType\":\"image/gif\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQsOopxoEYUMpiUiM2%2F-MlROSB6F71MIjbSMW1O%2F244723338_578486536829257_694173866565648170_n.gif?alt=media&token=b34ffdf2-52ae-4d1b-a4b8-20ae3df53aed\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633637759,\"nanoseconds\":618000000},\"count\":1}},\"size\":21432875,\"name\":\"244723338_578486536829257_694173866565648170_n.gif\"},\"-MlALgl0LTtuVe17T0nH\":{\"contentType\":\"image/jpeg\",\"key\":\"-MlALgl0LTtuVe17T0nH\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633351816,\"nanoseconds\":163000000}}},\"name\":\"photo_2021-09-30_21-34-15.jpg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAKqbJP14XAIRisnh6%2F-MlALgl0LTtuVe17T0nH%2Fphoto_2021-09-30_21-34-15.jpg?alt=media&token=3aaedda0-20ad-4963-8c1d-64f40ec8489b\",\"size\":170253},\"WXsXODAOT6TxoW0bLVSW\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FSn1LA48zB8JH5g9sg35p%2FScreenshot%202021-11-01%20172147.png?alt=media&token=3ab3ad3f-9361-4847-9ee2-b16ce4035b0a\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635762145,\"nanoseconds\":154000000}}},\"name\":\"Screenshot 2021-11-01 172147.png\",\"size\":34536,\"contentType\":\"image/png\",\"key\":\"WXsXODAOT6TxoW0bLVSW\"},\"-MlGt5_o_euNmeYIdgZB\":{\"size\":87536,\"key\":\"-MlGt5_o_euNmeYIdgZB\",\"name\":\"photo_2021-10-04_15-27-10.jpg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlGs9W8h3KCxs5GqBiw%2F-MlGt5_o_euNmeYIdgZB%2Fphoto_2021-10-04_15-27-10.jpg?alt=media&token=22074f9e-efc1-4d72-8f27-13e054aadb10\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633461498,\"nanoseconds\":203000000}}},\"contentType\":\"image/jpeg\"},\"K3ZLS67CVDCq7t4wVjwv\":{\"size\":682405,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FdYUIii4zkf6nVgLCNrKq%2F247616616_381250390402366_6536918040594652424_n.png?alt=media&token=c0588d79-c72f-42a6-b456-09174bc0cd59\",\"name\":\"247616616_381250390402366_6536918040594652424_n.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634838470,\"nanoseconds\":89000000}}},\"key\":\"K3ZLS67CVDCq7t4wVjwv\",\"contentType\":\"image/png\"},\"-MlRsFsRcqnWc2KTsLw8\":{\"size\":1265052,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633645830,\"nanoseconds\":570000000},\"count\":1}},\"key\":\"-MlRsFsRcqnWc2KTsLw8\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlRoGxMdthcry-qjCbm%2F-MlRsFsRcqnWc2KTsLw8%2FIngame1.png?alt=media&token=c06b5675-5fee-4c02-ab06-ae7fbc6601fa\",\"name\":\"Ingame1.png\",\"contentType\":\"image/png\"},\"SzNTiKK2xQfGhKTl8S9l\":{\"name\":\"Splash.mp4\",\"contentType\":\"video/mp4\",\"size\":15781081,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F10mzZKPKcFCxT9oSbWSf%2FSplash.mp4?alt=media&token=fcc179f2-fa05-4c8c-8a62-ca7d22f299b7\",\"key\":\"SzNTiKK2xQfGhKTl8S9l\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633958923,\"nanoseconds\":420000000},\"count\":1}}},\"-Ml1xJ5UPPYHkFyG8R6q\":{\"key\":\"-Ml1xJ5UPPYHkFyG8R6q\",\"size\":4803530,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1xJ5UPPYHkFyG8R6q%2FG_01_Idle2.gif?alt=media&token=d3dc76b0-363c-46dc-829f-2e5f1ed261ab\",\"contentType\":\"image/gif\",\"name\":\"G_01_Idle2.gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633210945,\"nanoseconds\":774000000}}}},\"-Ml2FqgpY4e-Q8p3MfmU\":{\"size\":3091582,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633216069,\"nanoseconds\":273000000}}},\"contentType\":\"image/jpeg\",\"key\":\"-Ml2FqgpY4e-Q8p3MfmU\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2FqgpY4e-Q8p3MfmU%2FBG_halan(%2Bmood-chi%E1%BB%81u-t%C3%A0).jpg?alt=media&token=eff11e1e-05de-4649-bc7d-ff1062aa72a5\",\"name\":\"BG_halan(+mood-chiều-tà).jpg\"},\"-MlROdckDnHDLIla0kOd\":{\"name\":\"244723338_578486536829257_694173866565648170_n.gif\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633637808,\"nanoseconds\":537000000}}},\"key\":\"-MlROdckDnHDLIla0kOd\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQsOopxoEYUMpiUiM2%2F-MlROdckDnHDLIla0kOd%2F244723338_578486536829257_694173866565648170_n.gif?alt=media&token=09e157fa-c003-4094-b294-cab9bc12f9ee\",\"contentType\":\"image/gif\",\"size\":21432875},\"sDyMaxKMHJbMOvzS8Ley\":{\"name\":\"launchzone-logo 1.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761542,\"nanoseconds\":392000000}}},\"size\":7361,\"contentType\":\"image/png\",\"key\":\"sDyMaxKMHJbMOvzS8Ley\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F4fQwom6Ajtga9LDd8Neb%2Flaunchzone-logo%201.png?alt=media&token=3355d529-7f96-4b8e-9a67-4c964f8a4976\"},\"-Ml20SKtLEnYF5O1WOlS\":{\"size\":963098,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212032,\"nanoseconds\":24000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml20SKtLEnYF5O1WOlS%2FFrame%20452162.png?alt=media&token=7cc43c10-9dd6-418b-8ada-1d25726e697e\",\"key\":\"-Ml20SKtLEnYF5O1WOlS\",\"contentType\":\"image/png\",\"name\":\"Frame 452162.png\"},\"-Ml22J7B02-oktt2cBME\":{\"contentType\":\"image/gif\",\"name\":\"P_01_Idle.gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212520,\"nanoseconds\":74000000},\"count\":1}},\"size\":3096491,\"key\":\"-Ml22J7B02-oktt2cBME\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml22J7B02-oktt2cBME%2FP_01_Idle.gif?alt=media&token=4038268d-763f-4a3d-b44f-5b58704f71d1\"},\"-Ml2FNDOFnERfryLPkYX\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215942,\"nanoseconds\":520000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2FNDOFnERfryLPkYX%2FIndia.jpg?alt=media&token=4b26cd14-9f5a-42c4-a8e9-2d44a3297df3\",\"name\":\"India.jpg\",\"contentType\":\"image/jpeg\",\"size\":1084904,\"key\":\"-Ml2FNDOFnERfryLPkYX\"},\"-Ml2BwGfqiA7YhQ0j0ws\":{\"contentType\":\"image/gif\",\"key\":\"-Ml2BwGfqiA7YhQ0j0ws\",\"name\":\"Comp 1_3.gif\",\"size\":5643906,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215043,\"nanoseconds\":537000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2BwGfqiA7YhQ0j0ws%2FComp%201_3.gif?alt=media&token=d2c04636-ab5d-4fc4-937b-212834885583\"},\"FRfrm6M71jA8TWDOduAT\":{\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635711207,\"nanoseconds\":28000000}}},\"key\":\"FRfrm6M71jA8TWDOduAT\",\"size\":152612,\"name\":\"Screenshot 2021-11-01 031317.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FFlChBLhyzRNkP6m0xI5R%2FScreenshot%202021-11-01%20031317.png?alt=media&token=d789f4d4-0022-438f-a998-37dff98da97a\"},\"tf9Xl4x6SEsdxbnuzNNJ\":{\"size\":239683,\"contentType\":\"image/png\",\"key\":\"tf9Xl4x6SEsdxbnuzNNJ\",\"name\":\"Screenshot 2021-10-19 094500.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634611607,\"nanoseconds\":113000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FnArD6XT9xKGdXaD7dUrQ%2FScreenshot%202021-10-19%20094500.png?alt=media&token=78b9e468-ae83-48b9-bed4-7c86eb0d4c01\"},\"-Ml2C0Qo_GBNozpBMPyT\":{\"contentType\":\"image/gif\",\"name\":\"Comp 1_4.gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215064,\"nanoseconds\":429000000}}},\"key\":\"-Ml2C0Qo_GBNozpBMPyT\",\"size\":4947545,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2C0Qo_GBNozpBMPyT%2FComp%201_4.gif?alt=media&token=d276a389-45bf-4bdc-963e-4171004f8c93\"},\"-MlRjSwjcklS3LTCFsr_\":{\"name\":\"Frame 45307.jpg\",\"size\":978505,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlRh-q8m2H4v1XX96Yp%2F-MlRjSwjcklS3LTCFsr_%2FFrame%2045307.jpg?alt=media&token=dfe43300-e719-4fba-88d4-b2c04ca4e07b\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633643524,\"nanoseconds\":26000000},\"count\":1}},\"key\":\"-MlRjSwjcklS3LTCFsr_\",\"contentType\":\"image/jpeg\"},\"-MlBUK_aP-0W6CJtw17k\":{\"edits\":{\"__type\":\"object\"},\"name\":\"242132820_999517994222149_53273660477712052_n 1.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUK_aP-0W6CJtw17k%2F242132820_999517994222149_53273660477712052_n%201.png?alt=media&token=4580052b-1792-4a90-86c3-454b7603cf36\",\"key\":\"-MlBUK_aP-0W6CJtw17k\",\"size\":18845,\"contentType\":\"image/png\"},\"qRRdQpSgUInXLCV26miv\":{\"size\":21489,\"name\":\"Screenshot 2021-11-01 171653.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FXMCRVBBuzPYyau8Ein8o%2FScreenshot%202021-11-01%20171653.png?alt=media&token=1fe6cd63-2c9b-4bf7-91f7-cd0b9aa4cd07\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635762022,\"nanoseconds\":199000000},\"count\":1}},\"contentType\":\"image/png\",\"key\":\"qRRdQpSgUInXLCV26miv\"},\"-Ml2G3UWhIiuVtbM9iVb\":{\"size\":1263468,\"name\":\"Namcuc.jpg\",\"contentType\":\"image/jpeg\",\"key\":\"-Ml2G3UWhIiuVtbM9iVb\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2G3UWhIiuVtbM9iVb%2FNamcuc.jpg?alt=media&token=c1a9763c-8baa-483a-8784-f9d7c0fa671b\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633216124,\"nanoseconds\":711000000}}}},\"-Ml2Brt1JC5mp6yRqdOy\":{\"contentType\":\"image/gif\",\"size\":6790511,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2Brt1JC5mp6yRqdOy%2FComp%201_2.gif?alt=media&token=f95f22e9-160d-4103-a73d-5f205ad5ccd5\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215026,\"nanoseconds\":521000000},\"count\":1}},\"key\":\"-Ml2Brt1JC5mp6yRqdOy\",\"name\":\"Comp 1_2.gif\"},\"OT8zTD8n7a3QiccIZSUC\":{\"name\":\"oxbull 1.png\",\"size\":3944,\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761597,\"nanoseconds\":807000000}}},\"key\":\"OT8zTD8n7a3QiccIZSUC\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FgltPThEAeSOwveFzJAOn%2Foxbull%201.png?alt=media&token=3b39b79c-2c02-4174-9dd0-d42747e6357b\"},\"AFF65Rra9Nw25FhadNmc\":{\"key\":\"AFF65Rra9Nw25FhadNmc\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FhuKCWx1aGHAyS73hLUfd%2FScreenshot%202021-11-01%20171431.png?alt=media&token=bff3b54e-d223-43ed-bb93-93e2c6951d7a\",\"size\":20784,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635761680,\"nanoseconds\":177000000},\"count\":1}},\"contentType\":\"image/png\",\"name\":\"Screenshot 2021-11-01 171431.png\"},\"LCsHcYdTBZy9bv0EQCi9\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F8DxRJ1y6xb3f0bUm3HIz%2FScreenshot%202021-11-01%20173951.png?alt=media&token=b02d22e0-73d5-412a-a536-9ae63ee71230\",\"name\":\"Screenshot 2021-11-01 173951.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635790991,\"nanoseconds\":771000000},\"count\":1}},\"key\":\"LCsHcYdTBZy9bv0EQCi9\",\"size\":115797,\"contentType\":\"image/png\"},\"-Ml2FWILPxr_bHqV-Kfq\":{\"contentType\":\"image/jpeg\",\"size\":1743794,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215980,\"nanoseconds\":134000000}}},\"key\":\"-Ml2FWILPxr_bHqV-Kfq\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2FWILPxr_bHqV-Kfq%2FMexic.jpg?alt=media&token=d7644ddc-9506-4845-8dbb-b66e28771762\",\"name\":\"Mexic.jpg\"},\"-Ml1xhQIgfxoCjQhb1ls\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1xhQIgfxoCjQhb1ls%2FFrame%2045216.png?alt=media&token=4057755f-8f3f-484f-9412-dbbf6475ee9a\",\"size\":1159676,\"name\":\"Frame 45216.png\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633211048,\"nanoseconds\":858000000}}},\"contentType\":\"image/png\",\"key\":\"-Ml1xhQIgfxoCjQhb1ls\"},\"-MlBUG5aoKP8BrLAAvvk\":{\"size\":18288,\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUG5aoKP8BrLAAvvk%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=b4302a6a-08cf-42c3-ae8a-68b6176054b6\",\"key\":\"-MlBUG5aoKP8BrLAAvvk\",\"contentType\":\"image/png\",\"edits\":{\"__type\":\"object\"}},\"8Pwdxc0VvP1qDRHORlEO\":{\"contentType\":\"image/png\",\"key\":\"8Pwdxc0VvP1qDRHORlEO\",\"name\":\"Screenshot 2021-11-01 174042.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788646,\"nanoseconds\":374000000},\"count\":1}},\"size\":210567,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F0JCeX1wJ88ihBKZYliZP%2FScreenshot%202021-11-01%20174042.png?alt=media&token=50f10e9f-06af-4dad-88eb-5a2dd7c92a1b\"},\"DvQuUlBfdxa0BS6tpcy6\":{\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634191928,\"nanoseconds\":702000000}}},\"size\":1315806,\"key\":\"DvQuUlBfdxa0BS6tpcy6\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fqg3cu5oYI3G6KK12A0mO%2FScreenshot%202021-10-14%20131142.png?alt=media&token=a3e3733d-0616-4041-8853-ddb38a1f02d3\",\"name\":\"Screenshot 2021-10-14 131142.png\"},\"-Ml1xyWYIw-IV-W-rZLz\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633211120,\"nanoseconds\":712000000}}},\"key\":\"-Ml1xyWYIw-IV-W-rZLz\",\"contentType\":\"image/gif\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1xyWYIw-IV-W-rZLz%2FG_02_Idle.gif?alt=media&token=e344e73a-c273-4e82-9a80-8555051c114c\",\"size\":3673682,\"name\":\"G_02_Idle.gif\"},\"m9FoOBaCGFDWccKXNE5T\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fp8qQqPTOHSgsnl8vJQOW%2Fphoto_2021-10-14_02-49-12.jpg?alt=media&token=8163b785-355e-41e0-859a-4c55decdfcb6\",\"name\":\"photo_2021-10-14_02-49-12.jpg\",\"key\":\"m9FoOBaCGFDWccKXNE5T\",\"size\":129143,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634191055,\"nanoseconds\":123000000},\"count\":1}},\"contentType\":\"image/jpeg\"},\"iYqVZpysKOVTKjUOMSpv\":{\"contentType\":\"image/jpeg\",\"size\":3743795,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FYmTP3gzxtGidXKYvIcf1%2FOrder%2073_hadad.jpg?alt=media&token=bc3c75f7-02a0-4979-bbd5-37cdad1ba5f1\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634874999,\"nanoseconds\":865000000}}},\"name\":\"Order 73_hadad.jpg\",\"key\":\"iYqVZpysKOVTKjUOMSpv\"},\"EP7fg5T2ljtMp2WxdmWf\":{\"key\":\"EP7fg5T2ljtMp2WxdmWf\",\"name\":\"Screenshot 2021-11-01 203450.png\",\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788232,\"nanoseconds\":715000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FZ6mQOz6wGCv2MwlKJkQ8%2FScreenshot%202021-11-01%20203450.png?alt=media&token=bbfd6f87-0922-4995-b5ff-63b25f8543c2\",\"size\":327420},\"pHyRFDkAzC22yck5qQrU\":{\"size\":34536,\"key\":\"pHyRFDkAzC22yck5qQrU\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635762138,\"nanoseconds\":706000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FZaZ9yjrkNycg3glHmz6l%2FScreenshot%202021-11-01%20172147.png?alt=media&token=3f55fb1e-dfd1-414d-ad45-b007a3af409c\",\"contentType\":\"image/png\",\"name\":\"Screenshot 2021-11-01 172147.png\"},\"lXoKiH5DC9QN0RL5gaKT\":{\"key\":\"lXoKiH5DC9QN0RL5gaKT\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FG6K5qXV5n6nGQt2VPfD4%2FOrder%2073_hadad.jpg?alt=media&token=63310bb1-5753-4471-b7c5-cbcca0f895a9\",\"size\":3743795,\"name\":\"Order 73_hadad.jpg\",\"contentType\":\"image/jpeg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634874995,\"nanoseconds\":637000000}}}},\"-MlQoRrVuuqek6b4iIBO\":{\"name\":\"Screenshot 2021-10-08 003326.png\",\"edits\":{\"__type\":\"object\"},\"size\":220628,\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQnhdAf-STeqOYQq6R%2F-MlQoRrVuuqek6b4iIBO%2FScreenshot%202021-10-08%20003326.png?alt=media&token=2a8f1cdb-92b8-4882-a7ef-d8a32ca962bc\",\"key\":\"-MlQoRrVuuqek6b4iIBO\"},\"-MlQrsOuHqjzm1Ifr_d9\":{\"name\":\"Screenshot 2021-10-08 004856.png\",\"size\":368900,\"key\":\"-MlQrsOuHqjzm1Ifr_d9\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQnhdAf-STeqOYQq6R%2F-MlQrsOuHqjzm1Ifr_d9%2FScreenshot%202021-10-08%20004856.png?alt=media&token=64f8dab2-0dff-4cf2-b638-51aa9ea92a0e\",\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633628950,\"nanoseconds\":795000000},\"count\":1}}},\"IWMmbOX5kba2nTKiECQN\":{\"size\":3554499,\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634198788,\"nanoseconds\":515000000}}},\"key\":\"IWMmbOX5kba2nTKiECQN\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fyx8dP7heNTHGwPz0Sk2A%2FIMG_6987.PNG?alt=media&token=b83b6d90-c392-4dc1-bc1c-ae1f4e101b73\",\"name\":\"IMG_6987.PNG\"},\"-Ml2E_t99XKB_zPJwlcB\":{\"contentType\":\"image/jpeg\",\"size\":1691951,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml2CsnFPJXxoxp9AAfb%2F-Ml2E_t99XKB_zPJwlcB%2FTQ.jpg?alt=media&token=02925d0f-6ba7-4c97-8764-35297b7d18f9\",\"key\":\"-Ml2E_t99XKB_zPJwlcB\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215738,\"nanoseconds\":319000000},\"count\":1}},\"name\":\"TQ.jpg\"},\"-Ml1y5fOD08dZegwFlsN\":{\"key\":\"-Ml1y5fOD08dZegwFlsN\",\"name\":\"G_03_Idle.gif\",\"contentType\":\"image/gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633211153,\"nanoseconds\":219000000}}},\"size\":3155283,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1y5fOD08dZegwFlsN%2FG_03_Idle.gif?alt=media&token=88613657-dca4-40e6-9327-daec5393c865\"},\"-MlBUDU_vaVplrmZGtMY\":{\"name\":\"242132820_999517994222149_53273660477712052_n 1.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUDU_vaVplrmZGtMY%2F242132820_999517994222149_53273660477712052_n%201.png?alt=media&token=69df5f71-3664-470e-8404-60e34b37b0e0\",\"size\":18845,\"key\":\"-MlBUDU_vaVplrmZGtMY\",\"contentType\":\"image/png\",\"edits\":{\"__type\":\"object\"}},\"USs8BrmCvBr84aRy9rA1\":{\"contentType\":\"image/png\",\"key\":\"USs8BrmCvBr84aRy9rA1\",\"name\":\"IMG_6989.PNG\",\"size\":2797986,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634199048,\"nanoseconds\":226000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FFifjDWwHQ77Vmz7wWq8j%2FIMG_6989.PNG?alt=media&token=fe48579e-a262-4740-941c-1e96e9736bfa\"},\"fssxMAZmbxj4AfDqlp8E\":{\"name\":\"IMG_6988.PNG\",\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634198887,\"nanoseconds\":630000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FKrEiSpcqnNqW3uwmsB16%2FIMG_6988.PNG?alt=media&token=9ceca688-9719-412a-b3ba-b913505ad392\",\"key\":\"fssxMAZmbxj4AfDqlp8E\",\"size\":3161700},\"-MlBUK_b8aBo5pBwJexs\":{\"contentType\":\"image/png\",\"size\":18288,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUK_b8aBo5pBwJexs%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=547c22a3-144e-4b69-820d-adeaad98c169\",\"key\":\"-MlBUK_b8aBo5pBwJexs\",\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"edits\":{\"__type\":\"object\"}},\"-MlGtm8Z5BbGvbb7D83x\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlGs9W8h3KCxs5GqBiw%2F-MlGtm8Z5BbGvbb7D83x%2F960x540%201.png?alt=media&token=c550fe78-1f66-4b5e-9c9e-a740425ef0cc\",\"size\":992717,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633461678,\"nanoseconds\":139000000},\"count\":1}},\"key\":\"-MlGtm8Z5BbGvbb7D83x\",\"name\":\"960x540 1.png\",\"contentType\":\"image/png\"},\"fiyn64MxrfH0yLbR55Bk\":{\"contentType\":\"image/png\",\"size\":1265052,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634190946,\"nanoseconds\":905000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FX4qW9rF6GUYFAEzg03I2%2FIngame1%20(1).png?alt=media&token=dce782b6-773f-4545-9efd-d30a4705cc48\",\"key\":\"fiyn64MxrfH0yLbR55Bk\",\"name\":\"Ingame1 (1).png\"},\"-MlAMA-gbyWesOp3eqV6\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAKqbJP14XAIRisnh6%2F-MlAMA-gbyWesOp3eqV6%2Ftelegram.png?alt=media&token=647b6af7-adf8-4ca3-825c-15c2c4f02c52\",\"key\":\"-MlAMA-gbyWesOp3eqV6\",\"contentType\":\"image/png\",\"name\":\"telegram.png\",\"size\":23088,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633351939,\"nanoseconds\":293000000}}}},\"OEr9pArBYDBkAGNZkjG9\":{\"size\":822046,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635788405,\"nanoseconds\":54000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FRQ6WN1WyR3FSRKbZBXXu%2FScreenshot%202021-11-01%20174325.png?alt=media&token=ac65f6ac-d421-4b7e-bd07-999b8809c708\",\"key\":\"OEr9pArBYDBkAGNZkjG9\",\"contentType\":\"image/png\",\"name\":\"Screenshot 2021-11-01 174325.png\"},\"-MlGrmuoQyFGrrLcfY9P\":{\"name\":\"Screenshot 2021-10-06 021147.png\",\"size\":817389,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlGmxmo4pudnMEechdO%2F-MlGrmuoQyFGrrLcfY9P%2FScreenshot%202021-10-06%20021147.png?alt=media&token=e099a7e1-4e0e-49d7-98d2-a75f88a92171\",\"key\":\"-MlGrmuoQyFGrrLcfY9P\",\"contentType\":\"image/png\",\"edits\":{\"__type\":\"object\"}},\"-Ml22T5lAOlmJOxKSFg5\":{\"name\":\"P_03_Idle.gif\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633212560,\"nanoseconds\":237000000}}},\"size\":3017423,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml22T5lAOlmJOxKSFg5%2FP_03_Idle.gif?alt=media&token=fbf9e980-a17e-4263-8927-9fba50e61ecb\",\"key\":\"-Ml22T5lAOlmJOxKSFg5\",\"contentType\":\"image/gif\"},\"o43DR5lBpt6sTKnEfzp5\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F03uw7as0uNNMkKOfzgtt%2Fphoto_2021-10-16_06-03-33.jpg?alt=media&token=147b08e6-d376-4a11-91b1-b179cd043180\",\"key\":\"o43DR5lBpt6sTKnEfzp5\",\"name\":\"photo_2021-10-16_06-03-33.jpg\",\"contentType\":\"image/jpeg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1634356734,\"nanoseconds\":370000000}}},\"size\":100556},\"JXOaRSIYgkaKJx2KZc9k\":{\"key\":\"JXOaRSIYgkaKJx2KZc9k\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F3oVNnfV2CNYB8febNRo3%2FScreenshot%202021-11-01%20172147.png?alt=media&token=fffe0a0b-1863-4506-acb0-8a56cef5eb5c\",\"size\":34536,\"name\":\"Screenshot 2021-11-01 172147.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635762223,\"nanoseconds\":387000000},\"count\":1}},\"contentType\":\"image/png\"},\"VU5gJGhYjef2OR7ZMKft\":{\"name\":\"Screenshot 2021-11-01 031740.png\",\"contentType\":\"image/png\",\"key\":\"VU5gJGhYjef2OR7ZMKft\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635711490,\"nanoseconds\":521000000}}},\"size\":356148,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FXly5fpvc87pSv4Y3xbMM%2FScreenshot%202021-11-01%20031740.png?alt=media&token=122aae0a-6e98-43d6-a397-ae2530b78ffb\"},\"-MlQu6gYPlGdb1N8Tn84\":{\"key\":\"-MlQu6gYPlGdb1N8Tn84\",\"size\":4895343,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633629539,\"nanoseconds\":440000000}}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQsOopxoEYUMpiUiM2%2F-MlQu6gYPlGdb1N8Tn84%2Fgiphy.gif?alt=media&token=89578f10-6337-4228-a636-efed18920243\",\"name\":\"giphy.gif\",\"contentType\":\"image/gif\"},\"-MlTC_sIkjGm-Di_itkx\":{\"size\":20119260,\"key\":\"-MlTC_sIkjGm-Di_itkx\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633668204,\"nanoseconds\":632000000},\"count\":1}},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlTBoCVMZRO3CA5kR_i%2F-MlTC_sIkjGm-Di_itkx%2FUntitled-1.gif?alt=media&token=90d80cd7-d128-4e89-92c7-f0c9a8554079\",\"name\":\"Untitled-1.gif\",\"contentType\":\"image/gif\"},\"-Ml2C4CJJiE_eRdRJWaG\":{\"key\":\"-Ml2C4CJJiE_eRdRJWaG\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2C4CJJiE_eRdRJWaG%2FComp%201_5.gif?alt=media&token=abb3b049-e800-4059-818a-e5fe610641be\",\"size\":5164766,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633215080,\"nanoseconds\":153000000}}},\"contentType\":\"image/gif\",\"name\":\"Comp 1_5.gif\"},\"-MlBU857TAgzCieFN-yy\":{\"key\":\"-MlBU857TAgzCieFN-yy\",\"contentType\":\"image/png\",\"edits\":{\"__type\":\"object\"},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBU857TAgzCieFN-yy%2F242132820_999517994222149_53273660477712052_n%201.png?alt=media&token=e31b8af4-6fcf-4eed-819f-68559376da07\",\"name\":\"242132820_999517994222149_53273660477712052_n 1.png\",\"size\":18845},\"5phZBgn4LvANk4VUgy9p\":{\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FthgubLmvAhs7S3ACV78s%2FScreenshot%202021-11-06%20000303.png?alt=media&token=51b1bd90-51fd-4057-99af-d0ee977c1ce7\",\"key\":\"5phZBgn4LvANk4VUgy9p\",\"size\":129558,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636132120,\"nanoseconds\":645000000}}},\"name\":\"Screenshot 2021-11-06 000303.png\"},\"C3sZuFmZvfLSoS758PvE\":{\"name\":\"Screenshot 2021-11-06 000303.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fhh0EPGoilJNtw2ube3Bd%2FScreenshot%202021-11-06%20000303.png?alt=media&token=b6bae51d-9f3e-41fe-b73c-2604d0f83c66\",\"key\":\"C3sZuFmZvfLSoS758PvE\",\"size\":129558,\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636132232,\"nanoseconds\":485000000}}}},\"-MlBUDUavQjn1G7qXyPO\":{\"contentType\":\"image/png\",\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"edits\":{\"__type\":\"object\"},\"key\":\"-MlBUDUavQjn1G7qXyPO\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBUDUavQjn1G7qXyPO%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=766096f3-8fe7-4992-a418-14ab61a7459e\",\"size\":18288},\"toFmyYnKrNm95sTVg1Gh\":{\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635710355,\"nanoseconds\":937000000},\"count\":1}},\"key\":\"toFmyYnKrNm95sTVg1Gh\",\"size\":221327,\"name\":\"Screenshot 2021-11-01 024557.png\",\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2Fu3fLR3cBqZ3sphtdB5cq%2FScreenshot%202021-11-01%20024557.png?alt=media&token=d28e5370-febf-4f4e-9013-57df55a4dc1d\"},\"lAbREl2IW5IfQRXoTDSr\":{\"key\":\"lAbREl2IW5IfQRXoTDSr\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2F0X1NsqlqQnHY655EJZQq%2FScreenshot%202021-11-01%20031740.png?alt=media&token=001b1c22-7944-42ca-a866-524e3ac13401\",\"contentType\":\"image/png\",\"name\":\"Screenshot 2021-11-01 031740.png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635711472,\"nanoseconds\":540000000}}},\"size\":356148},\"-MlRjVtwkHN6uCzlbA87\":{\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633643535,\"nanoseconds\":464000000}}},\"size\":957579,\"key\":\"-MlRjVtwkHN6uCzlbA87\",\"name\":\"Frame 45308.jpg\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlRh-q8m2H4v1XX96Yp%2F-MlRjVtwkHN6uCzlbA87%2FFrame%2045308.jpg?alt=media&token=926fbfc5-e8b1-48cd-bb92-c80ee9e5d14d\",\"contentType\":\"image/jpeg\"},\"-Ml2B4ovd2vOyETwpDA0\":{\"size\":1023863,\"contentType\":\"video/webm\",\"key\":\"-Ml2B4ovd2vOyETwpDA0\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2B4ovd2vOyETwpDA0%2FComp%201.webm?alt=media&token=44df09d8-bc20-435d-912f-0b50ee685321\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633214819,\"nanoseconds\":588000000},\"count\":1}},\"name\":\"Comp 1.webm\"},\"-Ml2BjtAZbbojAOU9wP2\":{\"contentType\":\"image/gif\",\"key\":\"-Ml2BjtAZbbojAOU9wP2\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml23bb-c7-AhfT5UWyW%2F-Ml2BjtAZbbojAOU9wP2%2FComp%201_1.gif?alt=media&token=0565048d-89b8-47e9-b49a-b87b6e6d9f14\",\"name\":\"Comp 1_1.gif\",\"size\":6560105,\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633214994,\"nanoseconds\":278000000},\"count\":1}}},\"-MlQpHRI6sO1_6iGX1Ec\":{\"key\":\"-MlQpHRI6sO1_6iGX1Ec\",\"contentType\":\"image/png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlQnhdAf-STeqOYQq6R%2F-MlQpHRI6sO1_6iGX1Ec%2FScreenshot%202021-10-08%20003729.png?alt=media&token=62dd53ec-a266-4f81-884d-caa80435165f\",\"name\":\"Screenshot 2021-10-08 003729.png\",\"size\":433533,\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633628271,\"nanoseconds\":530000000}}}},\"-MlBU-GbzByzVhwI22pe\":{\"edits\":{\"__type\":\"object\"},\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlAhJSEDDXbBqBjxHnB%2F-MlBU-GbzByzVhwI22pe%2F241316649_1206081899891728_1364695691559440802_n%201.png?alt=media&token=8823a5d9-4458-408e-ad84-3751c1b99948\",\"name\":\"241316649_1206081899891728_1364695691559440802_n 1.png\",\"size\":18288,\"key\":\"-MlBU-GbzByzVhwI22pe\",\"contentType\":\"image/png\"},\"-Ml1v-E20YhM0wXfIGk6\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Mjo2ABTnR_fSGc4r-lv%2F-Ml1m6n0a891haCc9oqs%2F-Ml1v-E20YhM0wXfIGk6%2F1.jpg?alt=media&token=19684e1c-f255-4afd-a754-6052fdd31101\",\"key\":\"-Ml1v-E20YhM0wXfIGk6\",\"name\":\"1.jpg\",\"contentType\":\"image/jpeg\",\"edits\":{\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1633210340,\"nanoseconds\":117000000},\"count\":1}},\"size\":4735378},\"wcVkwCA0onXxMxQyvQXq\":{\"contentType\":\"image/jpeg\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1636008311,\"nanoseconds\":389000000}}},\"key\":\"wcVkwCA0onXxMxQyvQXq\",\"name\":\"33 (4).jpg\",\"size\":1376355,\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FfzG8YMbdrt6f64rPWYHq%2F33%20(4).jpg?alt=media&token=75ebb0e1-a8dc-4e24-8450-53e0acf6685f\"},\"9g1dA1Vv4qG8qQ8OaIMx\":{\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FrVjyW2caqBnDUWeinhFI%2FScreenshot%202021-11-01%20025721.png?alt=media&token=f45c4db9-0a75-4007-a330-57ffb36d1c2a\",\"key\":\"9g1dA1Vv4qG8qQ8OaIMx\",\"name\":\"Screenshot 2021-11-01 025721.png\",\"size\":50296,\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":1,\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635710280,\"nanoseconds\":435000000}}}},\"UB9T5uuVyffooetSeYVF\":{\"name\":\"Screenshot 2021-11-01 024823.png\",\"downloadURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Fuploads%2FbbJxN3CemCLYZ8QCV2aN%2FScreenshot%202021-11-01%20024823.png?alt=media&token=8e5aca2b-5873-43e4-b035-87382e26427a\",\"size\":304084,\"contentType\":\"image/png\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"updatedAt\":{\"__type\":\"timestamp\",\"seconds\":1635710960,\"nanoseconds\":810000000},\"count\":1}},\"key\":\"UB9T5uuVyffooetSeYVF\"}}},\"spaces/-Mjo2ABTnR_fSGc4r-lv/revisions/es6GDqgT1IfwVrzrmG1r/chunks#limitType=F\":{\"__type\":\"array\"},\"spaces/-Mjo2ABTnR_fSGc4r-lv/sheets/x7afEjuJo7obOYYa5xMy\":{\"page\":\"-Mjo2C80oWVg9nMeM-fA\",\"edits\":{\"__type\":\"object\"},\"key\":\"x7afEjuJo7obOYYa5xMy\",\"legacyURL\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/documents%2F-Mjo2ABTnR_fSGc4r-lv%2F-MlGjCxvwiesPXcGP6st%2Fmaster%2F-Mjo2C80oWVg9nMeM-fA%2Fdocument.json?alt=media&token=3db3631a-32c3-42fe-93ba-1d9abd787c49\",\"revision\":\"-MlTzqvyid4MoI5wtIqn\",\"body\":{\"__type\":\"blob\",\"buffer\":\"CiA2MmU5ZDFhMDcxYWQ0YjdhOTE3MWFhZWE4NzBiMjU3OBJvCiBiYjFjYzhiNTM5M2M0OTIwYjQ5N2M2OGMyNzkxZGJhZhIJcGFyYWdyYXBoGj4SPAogOGI2NzFhZjVhNWYwNGMyNmFlOWU0M2U3ZTdjODE0ZDQSGAoORGVhciBmcmllbmRzLiASBgoEYm9sZDAAErYCCiA5ZGQ2NTc5YmJkNmY0ZTNhOTRjYWE2N2VhZjI3YWJjZBIFZW1iZWQaKBImCiBiNjQyMWE5YzIyMzQ0ZTk1YTdlYTI3NjMxNjcwMWI3YRICCgAiqAEKIDgwMWQ3NGJmOGFiMTRhMzk5NjE5ZjI4N2Q1YTU5ZTVlEgdjYXB0aW9uInsKIDUyMjc0M2E5MjBlMjRhMzdhNjliNDNhOGUyYjA2NWNmEglwYXJhZ3JhcGgaShJICiAxODhmNTI0ZTgyMTY0Zjg0YmFmODNhM2E0NGJhZjFjMhIkCiInJ1BMQVkgVE8gRUFSTiIgTk9UICJDSUNLIFRPIEVBUk4iMAAqNAoDdXJsEi0iaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1uUlQ2ek9LU0dBTSIwARJhCiA5NjQwMjRkOTY5OTI0YzViYjU1ZjVlOTA4MDljZGI0ZhIJcGFyYWdyYXBoGjASLgogNjNiN2Y3NDM3M2E2NGYyNDlkZTI2ZTFhOWMzMzA4ZjUSCgoAEgYKBGJvbGQwABKHAgogYmQzOTk1Yjc2NmE1NDFiZGI3MjU2YWJjMmFjNzU1ZjASCXBhcmFncmFwaBrVARLSAQogNTM4NzI2NmVkODhmNDQ1NDg5YTZjYTY0ZTBlMDkwODISrQEKogFUaGUgRHluYXN0eSBpcyBhIHN0YXJ0dXAgY29tcGFueSBmb3VuZGVkIHdpdGggdGhlIGdvYWwgb2YgYnVpbGRpbmcgYSBjb21wbGV0ZSBhbmQgc3Ryb25nIGVjb3N5c3RlbS4gVGhlIER5bmFzdHkgd2lsbCBmaXJzdCBkZXZlbG9wIHdpdGggMyBtYWluIGFyZWFzIGFzIGZvbGxvd2luZzoSBgoEYm9sZDAAEtsQCiA3Mjc3NjczZWVhNmU0NGMzOWE2NGQxMmQ5ZGJlZDIzNhIObGlzdC11bm9yZGVyZWQa6gca5wcKIGIxMGZmZDBiZTE5YTQwZTRhMmJkNjE4OGRjYzg4OWU3EglsaXN0LWl0ZW0atQcasgcKIDc2OWM4ZTYyMmJiYjRlM2VhYjY0N2E0ZDYyMjAzZDAyEglwYXJhZ3JhcGgagAcS/QYKIDE2YzBkM2Q0MWQ5ZDQ4ZDNiNWEyNTI1MTNjYjc1YjY3EhwKEk5GVCAgZ2FtZSBwbGF0Zm9ybRIGCgRib2xkEq0GCqoGOiBBdCB0aGUgbW9tZW50LCB0aGVyZSBhcmUgbWFueSBnYW1lcyBvbiB0aGUgbWFya2V0IGFuZCBtb3N0bHkgQ2xpY2tfdG9fZWFybiB3aXRoIGJvcmluZyBnYW1lcGxheSwgc2ltcGxlIGNvbnRlbnQsIHVuc3VzdGFpbmFibGUgZGV2ZWxvcG1lbnQgYW5kIGFmdGVyIGEgc2hvcnQgdGltZSB3aWxsIGJlIGRlY2xpbmVkLiBHcmFzcGluZyB0aGlzIHdlYWtuZXNzIGFuZCB3aXRoIHRoZSBkZXNpcmUgdG8gYnJpbmcgYSBmcmVzaCBicmVhdGggdG8gdGhlIGJsb2NrY2hhaW4gZ2FtZSBtYXJrZXQsIG91ciB0ZWFtIGhhcyByZXNlYXJjaGVkIGFuZCBkZXZlbG9wZWQgYSBnYW1lIHRoYXQgcHJvbWlzZXMgdG8gYmUgbXVjaCBtb3JlIGF0dHJhY3RpdmUgZm9yIHlvdSB0byBleHBsb3JlLiBBbiBhY3R1YWwgUExBWV9UT19FQVJOIGdhbWUuIEEgYmVhdXRpZnVsIE5GVCBjb2xsZWN0aW9uLiBBIGZhaXIgcGxheSBtZWNoYW5pc20sIHRyYW5zcGFyZW50LCB3aXRoIGFuIGV4dHJlbWVseSBhdHRyYWN0aXZlIGdhbWVwbGF5LiBZb3VyIGFiaWxpdHkgdG8gbWFrZSBtb25leSB3aWxsIGRlcGVuZCBvbiB5b3VyIHNraWxscyBhbmQgbWluZHNldC4gVGhlIGJldHRlciB5b3UgYXJlLCB0aGUgbW9yZSByZXdhcmRzIHlvdSB3aWxsIGVhcm4uIFN1cGVyIGFwcGVhbGluZyBtb250aGx5IHJld2FyZHMgYW5kIHJhbmtpbmcgbW9kZSBmb3IgdGhvc2Ugd2hvIGNvbnRyaWJ1dGUgYW5kIGxlYWQuIFRoZSBnYW1lIGlzIGRldmVsb3BlZCBvbiBtYW55IHBsYXRmb3JtczogTW9iaWxlLCBJT1MsIEFuZHJvaWQgYW5kIEZhY2Vib29rIFBsYXkgcGxhdGZvcm0uEgsKAQoSBgoEYm9sZDAAMAAasgMarwMKIDQyMTFjMDAxMmNkMDRiZTA5MDc1OTVkNTAzZGFmYjA0EglsaXN0LWl0ZW0a/QIa+gIKIGM3ZGZjOGFkOTkzYTRiZDk4MzFiMTliMTk5OGZmMDVkEglwYXJhZ3JhcGgayAISxQIKIGNmN2MwMzJkM2U1MDRiNjdiZWViNjg3ZmE1MzlhN2ZiEiMKGVN0YWtpbmcgYW5kIEVhcm4gcGxhdGZvcm0SBgoEYm9sZBL7AQr4ASBvbiB0aGUgd2FsbGV0IHRoYXQgVGhlIER5bmFzdHkgZGV2ZWxvcGVkOiBjb21iaW5lZCB3aXRoIHRoZSBzdHJlbmd0aCBvZiB0aGUgRGVGaSBtYXJrZXQgYW5kIHRoZSBwb3RlbnRpYWwgb2YgTkZULiBUaGUgRHluYXN0eSB3aWxsIGhhdmUgYW4gRWFybiBmdW5jdGlvbiB0aGF0IGFsbG93cyBwbGF5ZXJzIHRvIGRvIEZhcm1pbmcgYW5kIFN0YWtpbmcgd2l0aCBORlQgYW5kIERZVCByaWdodCBvbiBUaGUgRHluYXN0eSdzIHdhbGxldC4KMAAwABqCBRr/BAogYTk1ZDFhNDU4M2MyNGY0ZmIyYWRkODRjZGY0MTkyMTgSCWxpc3QtaXRlbRrNBBrKBAogYmRkYWZkZGY2ODJhNDRmYzkzMTk4OGY0YWIxNGNjNWYSCXBhcmFncmFwaBqYBBKVBAogM2RiZGExY2IwYjM2NGVjNzg3ZWVhYjMxZjZjYzFhNzUSKQofSURPLyBQUkVTQUxFIExhdW5jaHBhZCBQbGF0Zm9ybRIGCgRib2xkEsUDCsIDOiBMZXZlcmFnaW5nIHRoZSBsYXJnZSBudW1iZXIgb2YgYXZhaWxhYmxlIFVzZXJzIHdobyBwbGF5IFRoZSBEeW5hc3R5IGdhbWUgZnJvbSBXZWJzaXRlLCBBcHBzIGFuZCBGYWNlYm9vayBwbGF5IHBsYXRmb3JtcyAtIFRoZSBEeW5hc3R5IExhdW5jaHBhZCBQbGF0Zm9ybSB3aWxsIGhlbHAgRFlUIGhvbGRlcnMgb3B0aW1pemUgdGhlaXIgcHJvZml0cywgaGVscGluZyBUaGUgRFlUIGNvaW5zIHRoZXkgaG9sZCB0byBnZXQgbW9yZSBhbmQgbW9yZSB2YWx1YWJsZSB3aXRoIHRoZSByaWdodCB0byBwYXJ0aWNpcGF0ZSBpbiBJRE8gYW5kIFByZXNhbGUgZm9yIERZVCBIb2xkZXJzLiBXZSB3aWxsIGZvY3VzIG9uIG91ciBzdHJlbmd0aHMgdG8gc2VsZWN0IGFuZCBjb25uZWN0IEdhbWluZywgTkZULCBNYXJrZXRwbGFjZSwgTXVsdGljaGFpbiBwcm9qZWN0cyB0byBicmlkZ2UgdGhlIHJlbGVhc2UuMAAwADAAElUKIDVjNTk0YTQyMDE4MjQ5NzA4Yjk0ZTIyYTBjYjIzMTQ2EglwYXJhZ3JhcGgaJBIiCiA0M2M0N2IwMTYzMWU0NjYxYTJiMGViN2IxOTMwMzBmNzAAEnUKIGFmZmFmZDgzNjNlZTQ4NWZiMjc5YTc0MjMzNzJkN2Q1EglwYXJhZ3JhcGgaRBJCCiAxN2U5NzIwODJhZjI0MTA2ODY3N2NmYmM0ZWU3OWRlMBIeChJUaGUgRHluYXN0eSBUZWFtcy4SCAoGaXRhbGljMAAaEgoNc2NoZW1hVmVyc2lvbhIBMQ==\"}},\"\":{\"__type\":\"null\"},\"embeds/https:%2F%2Fwww%2Eyoutube%2Ecom%2Fwatch?v=nRT6zOKSGAM\":{\"url\":\"https://www.youtube.com/watch?v=nRT6zOKSGAM\",\"data\":{\"html\":\"<div><div style=\\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;\\\"><iframe src=\\\"https://cdn.iframe.ly/Op4TdAx\\\" style=\\\"top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;\\\" allowfullscreen scrolling=\\\"no\\\" allow=\\\"accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *;\\\"></iframe></div></div>\",\"icon\":\"https://www.youtube.com/s/desktop/be17f2ce/img/favicon_144x144.png\",\"site\":\"YouTube\",\"type\":\"rich\",\"title\":\"The Dynasty - Trailer\"}}},\"head\":{\"1f889b21b8994d63df8c4f569a4e2b0dd68f79b4\":{\"type\":\"font\",\"font\":\"Roboto\",\"fontFamilyName\":\"gitbook-content-font\"},\"094daa1d9a8f6aac808fc0918933206a8a6d8fa5\":{\"type\":\"meta\",\"name\":\"description\",\"content\":\"\"},\"4cc7b8a2a6672ec4ddc7dc5161647c0971fcf9dd\":{\"type\":\"meta\",\"name\":\"og:description\",\"content\":\"\"},\"b97c7f79ab6d525b9543279970989e6f1681c225\":{\"type\":\"meta\",\"name\":\"og:image\",\"content\":\"https://app.gitbook.com/share/space/thumbnail/-Mjo2ABTnR_fSGc4r-lv.png?color=%23363A39&logo=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mjo2ABTnR_fSGc4r-lv%252Ficon%252FZeCADsgoOxvgZhTVCsKo%252FLogo%2520Dynasty-512x512-2.jpg%3Falt%3Dmedia%26token%3D74a7e7b9-79ca-4143-a253-955fb0d72e2f&theme=light\"},\"c6ceddfff3d244fc45975546f2c1db41e48868a0\":{\"type\":\"meta\",\"name\":\"twitter:card\",\"content\":\"summary\"},\"a6e6bc0e2755433ee380686d844f507e9af72fdc\":{\"type\":\"meta\",\"name\":\"og:title\",\"content\":\"Welcome To The Dynasty Ecosystem\"},\"6cda7f1f02ec65a02c91fb0b56407608d76eb14b\":{\"type\":\"meta\",\"name\":\"twitter:site\",\"content\":\"The Dynasty\"},\"f346038b98be4de751de40dfba60c934dd41a324\":{\"type\":\"meta\",\"name\":\"robots\",\"content\":\"index\"},\"47e1819580de38610980f19b552aea6c1ff349a3\":{\"type\":\"link\",\"rel\":\"icon\",\"href\":\"https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mjo2ABTnR_fSGc4r-lv%2Ficon%2FZeCADsgoOxvgZhTVCsKo%2FLogo%20Dynasty-512x512-2.jpg?alt=media&token=74a7e7b9-79ca-4143-a253-955fb0d72e2f\"}},\"images\":{\"sizes\":{},\"uri\":[]},\"contentURLs\":{\"fa16597b62748fa7fbfe2e87ccbe8aa752d86f86\":{\"hostname\":\"the-dynasty.gitbook.io\",\"pathname\":\"the-dynasty\"}},\"contentRefs\":{\"d1ef28008f166374c0c654b48b6ebc2c6ca5bfb5\":[{\"text\":\"Game Play\",\"target\":{\"type\":\"space\",\"space\":\"-Mjo2ABTnR_fSGc4r-lv\",\"page\":\"game-play/game-play\"},\"extra\":{\"page\":{\"pages\":[\"nd7Cf4Nef7h0Fr8Jn8Nx\",\"-Ml0Uc38qHBZONFVT-UN\",\"-Ml0UyoIq3ISQgo-xMy5\",\"-Ml0UVby3zVgv0q7xk6S\",\"fQAo9dqZpO5789xHzzRQ\",\"dpwTP0VhKCukk12bHi61\",\"-Ml0VzUvu9zfqu61DNMH\",\"d1fOs95YvLqalY34njV5\",\"eB5NsZOMA9kFx4b157IJ\",\"mfND7iNbyP7LgR6U0vXV\",\"AKqLjCdHabhOtzgeYhLO\"],\"title\":\"Game Play\",\"path\":\"game-play\",\"kind\":\"sheet\",\"edits\":{\"ObUeOiVaJhVtPJVJcCP6BiYDlW82\":{\"count\":50,\"updatedAt\":{\"seconds\":1634198803,\"nanoseconds\":102000000}},\"OekQ2B2l55SsqatsHzWmX991woE2\":{\"count\":5,\"updatedAt\":{\"seconds\":1633681958,\"nanoseconds\":49000000}}},\"description\":\"Guide &  feature Update\",\"sheet\":\"EHZC4G4bPU2qrXJB9rJ4\",\"key\":\"-MjrWdIHSDPyIy-MlJoi\"}}},[\"spaces/-Mjo2ABTnR_fSGc4r-lv/revisions/es6GDqgT1IfwVrzrmG1r\"],false],\"53a668953abb1676e534e17f819814cf816db9ac\":[{\"text\":\"https://www.thedynasty.app/\",\"target\":\"https://www.thedynasty.app\"},[],false],\"ade8eee89a6f3adc03acdbfbdb6d76ff85f86e37\":[{\"text\":\"https://t.me/thedynastybsc\",\"target\":\"https://t.me/thedynastybsc\"},[],false],\"746bcec8e913c64788ede6407738455fe12237eb\":[{\"text\":\"https://twitter.com/Thedynasty_app\",\"target\":\"https://twitter.com/Thedynasty_app\"},[],false],\"0eaa1baf16f183c280fdaff4c62b1d51cf5adf88\":[{\"text\":\"https://thedynasty.app/\",\"target\":\"https://thedynasty.app\"},[],false]},\"screenToContentRefs\":{},\"swaggers\":{}}";
+        window.__GITBOOK_INITIAL_RENDER__ = true;
+        window.__GITBOOK_INITIAL_STATE_COMPRESSED__ = false;
+        window.__GITBOOK_LAZY_MODULES__ = [];
+    </script>
+
+
+</body>
+
+</html>

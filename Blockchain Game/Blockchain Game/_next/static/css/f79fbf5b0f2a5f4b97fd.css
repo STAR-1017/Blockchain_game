@@ -1,0 +1,1848 @@
+@import "../../../css2-2.css";
+@import "../../../css2-3.css";
+.DytLoading_loading__3Y674 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .5);
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center
+}
+
+.DytLoading_loading__3Y674 img {
+    height: 50px;
+    border-radius: 50%
+}
+
+.Footer_footer__3f33N {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    color: #8a8783;
+    font-size: 15px;
+    background-color: #1a130e;
+    padding: 40px 120px
+}
+
+@media(max-width:480px) {
+    .Footer_footer__3f33N {
+        flex-wrap: wrap;
+        -moz-box-pack: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px
+    }
+}
+
+.Footer_footer__3f33N ul {
+    display: -moz-box;
+    display: flex
+}
+
+@media(max-width:480px) {
+    .Footer_footer__3f33N ul {
+        width: 100%;
+        -moz-box-pack: center;
+        justify-content: center
+    }
+}
+
+.Footer_footer__3f33N li {
+    margin-left: 20px
+}
+
+.Footer_footer__3f33N a {
+    color: #fff;
+    font-weight: 600
+}
+
+.ClaimRewardPopup_backdrop__vUF5y {
+    background: #000;
+    opacity: .5;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.ClaimRewardPopup_popup__2f-2i {
+    width: 440px;
+    height: 323px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fac57a), to(#ffe0b3));
+    background: -webkit-linear-gradient(top, #fac57a, #ffe0b3);
+    background: linear-gradient(180deg, #fac57a, #ffe0b3);
+    border-radius: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 100
+}
+
+.ClaimRewardPopup_close__1VW-k {
+    height: 56px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer
+}
+
+.ClaimRewardPopup_title__3iqOh {
+    font-family: Elan;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    height: 72px;
+    line-height: 72px;
+    margin-top: 10px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(132, 82, 12, 0)), color-stop(49.48%, #84520c), to(rgba(132, 82, 12, 0)));
+    background: -webkit-linear-gradient(left, rgba(132, 82, 12, 0), #84520c 49.48%, rgba(132, 82, 12, 0));
+    background: linear-gradient(90deg, rgba(132, 82, 12, 0), #84520c 49.48%, rgba(132, 82, 12, 0))
+}
+
+.ClaimRewardPopup_btn__284zn {
+    width: 168px;
+    height: 48px;
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Elan;
+    font-size: 18px;
+    text-align: center;
+    line-height: 48px;
+    background-image: url(../../../img/btn-yes.png);
+    cursor: pointer
+}
+
+.ClaimRewardPopup_btnGroup__3f9Nt {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 40px
+}
+
+.ClaimRewardPopup_btnGroup__3f9Nt .ClaimRewardPopup_btn__284zn:last-child {
+    background-image: url(../../../img/btn-no.png)
+}
+
+.ClaimRewardPopup_text__I-q2- {
+    padding: 30px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #4c3219;
+    font-weight: 700
+}
+
+.MyAccountPopup_inner__18nuP {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 380px;
+    min-height: 500px;
+    padding: 16px;
+    background: #130b04;
+    border: 1px solid #4d3f35;
+    border-radius: 6px;
+    z-index: 1000
+}
+
+.MyAccountPopup_inner__18nuP,
+.MyAccountPopup_inner__18nuP input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff
+}
+
+.MyAccountPopup_inner__18nuP input {
+    background: rgba(30, 23, 24, .7);
+    border: 1px solid #716052;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px
+}
+
+.MyAccountPopup_tabHeader__2pe5L,
+.MyAccountPopup_tabHeader__2pe5L li {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center
+}
+
+.MyAccountPopup_tabHeader__2pe5L li {
+    width: 50%;
+    height: 40px;
+    font-family: Elan;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    -moz-box-pack: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #fed3a6;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.MyAccountPopup_tabHeader__2pe5L li.MyAccountPopup_active__2LKqF {
+    background-color: #fed3a6;
+    color: #0f0801
+}
+
+.MyAccountPopup_copyBtn__2O5hj {
+    background: #ff8300;
+    border-radius: 6px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    font-family: Elan;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 20px
+}
+
+.MyAccountPopup_stat__o5h_P li {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 15px
+}
+
+.MyAccountPopup_listTrans__PZsWi {
+    line-height: 1.5;
+    color: #fff;
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    top: 80px;
+    width: 100%;
+    left: 0;
+    padding: 20px
+}
+
+.MyAccountPopup_listTrans__PZsWi strong {
+    font-family: Squada One;
+    font-size: 18px
+}
+
+.MyAccountPopup_listTrans__PZsWi li {
+    position: relative;
+    font-size: 13px;
+    border-bottom: 1px solid #403535;
+    padding-bottom: 12px;
+    margin-bottom: 12px
+}
+
+.MyAccountPopup_line__38Yhi {
+    margin: 12px auto;
+    display: block;
+    height: 6px
+}
+
+.MyAccountPopup_transHash__9UV1P {
+    word-break: break-all;
+    padding-right: 70px
+}
+
+.MyAccountPopup_verifyBtn__2LDsc {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: url(../../../img/play/btn-connect.png);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 8px
+}
+
+.MyAccountPopup_verifyBtn__2LDsc:hover {
+    -webkit-transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1)
+}
+
+.Header_header__OkoDL {
+    height: 80px;
+    padding: 0 20px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    font-family: Elan;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #eedda1;
+    background-image: url(../../../img/bg-play-header.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 50%;
+    z-index: 10;
+    margin-bottom: -16px;
+    position: relative
+}
+
+@media(max-width:769px) {
+    .Header_header__OkoDL {
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column;
+        -moz-box-align: start;
+        align-items: flex-start;
+        height: auto;
+        background-image: url(../../../img/header.png);
+        background-position: top;
+        background-size: auto 85px
+    }
+}
+
+@media(max-width:480px) {
+    .Header_header__OkoDL {
+        padding: 0 15px
+    }
+}
+
+.Header_header__OkoDL.Header_existReward__xrJbe {
+    background-color: #130b04
+}
+
+@media(max-width:769px) {
+    .Header_header__OkoDL.Header_existReward__xrJbe {
+        margin-bottom: 0
+    }
+}
+
+.Header_header__OkoDL .Header_logo__1QUnI {
+    height: 68px;
+    cursor: pointer
+}
+
+@media(max-width:480px) {
+    .Header_header__OkoDL .Header_logo__1QUnI {
+        height: 50px;
+        margin: 7px 0
+    }
+}
+
+.Header_header__OkoDL>ul,
+.Header_header__OkoDL>ul li {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    height: 100%
+}
+
+.Header_header__OkoDL>ul li {
+    margin-left: 30px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    position: relative
+}
+
+.Header_header__OkoDL>ul li:hover .Header_submenu__3Uw5o {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto
+}
+
+.Header_header__OkoDL a {
+    color: #c7bbb7;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Header_header__OkoDL a.Header_active__31E4u,
+.Header_header__OkoDL a:hover {
+    color: #ffaa18
+}
+
+.Header_header__OkoDL .Header_submenuArrow__1uUmk {
+    margin-left: 5px
+}
+
+.Header_header__OkoDL .Header_submenu__3Uw5o {
+    position: absolute;
+    text-transform: none;
+    background-color: #000;
+    min-width: 150px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    top: 80px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Header_header__OkoDL .Header_submenu__3Uw5o:after {
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-color: #000;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    z-index: 1
+}
+
+.Header_header__OkoDL .Header_submenu__3Uw5o li {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 14px
+}
+
+.Header_headerRight__1HNAh {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    margin-left: auto
+}
+
+@media(max-width:769px) {
+    .Header_headerRight__1HNAh {
+        padding: 10px 20px;
+        margin: 0 -20px;
+        width: -webkit-calc(100% + 40px);
+        width: calc(100% + 40px)
+    }
+}
+
+@media(max-width:480px) {
+    .Header_headerRight__1HNAh {
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        width: -webkit-calc(100% + 30px);
+        width: calc(100% + 30px)
+    }
+    .Header_headerRight__1HNAh .Header_btnBuy__VUnTU {
+        display: none
+    }
+}
+
+.Header_walletInfo__3ZIFZ {
+    display: -moz-box;
+    display: flex
+}
+
+@media(max-width:769px) {
+    .Header_walletInfo__3ZIFZ {
+        position: absolute;
+        right: 20px;
+        top: 11px
+    }
+}
+
+@media(max-width:480px) {
+    .Header_walletInfo__3ZIFZ {
+        right: 15px;
+        top: 15px
+    }
+}
+
+.Header_headerRewardInfo__2DZBc {
+    display: -moz-box;
+    display: flex
+}
+
+@media(max-width:769px) {
+    .Header_headerRewardInfo__2DZBc {
+        -moz-box-pack: justify;
+        justify-content: space-between;
+        background-color: #130b04;
+        padding: 20px 20px 30px
+    }
+}
+
+@media(max-width:480px) {
+    .Header_headerRewardInfo__2DZBc {
+        top: 70px;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column
+    }
+}
+
+.Header_rewardBlock__2ELLU {
+    padding: 5px 0
+}
+
+.Header_reward__b__ZI {
+    background: rgba(30, 23, 24, .7);
+    border-radius: 8px;
+    padding: 0 10px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    border: 1px solid #716052;
+    width: 390px;
+    position: relative;
+    height: 48px
+}
+
+@media(max-width:480px) {
+    .Header_reward__b__ZI {
+        width: 100%;
+        margin-bottom: 15px
+    }
+}
+
+.Header_reward__b__ZI .Header_rewardInfo__2AWGV {
+    cursor: pointer
+}
+
+.Header_reward__b__ZI small {
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    text-transform: none;
+    font-weight: 400;
+    display: block;
+    color: #fff
+}
+
+.Header_reward__b__ZI span {
+    color: #e6ab58
+}
+
+.Header_reward__b__ZI .Header_refreshBtn__18R2e {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -14px;
+    height: 28px
+}
+
+.Header_reward__b__ZI .Header_refreshBtn__18R2e img {
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Header_reward__b__ZI .Header_refreshBtn__18R2e img:first-child {
+    height: 28px
+}
+
+.Header_reward__b__ZI .Header_refreshBtn__18R2e img:last-child {
+    position: absolute
+}
+
+.Header_reward__b__ZI .Header_refreshBtn__18R2e:hover img:last-child {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.Header_rewardList__QK9Md {
+    margin: 0;
+    background: #201a1a;
+    border-radius: 4px;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 10;
+    min-height: 300px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+@media(max-width:769px) {
+    .Header_rewardList__QK9Md {
+        width: 500px;
+        max-width: 100%;
+        display: -moz-box;
+        display: flex;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column;
+        -moz-box-align: end;
+        align-items: flex-end;
+        position: fixed;
+        top: 0!important;
+        bottom: 0;
+        left: -100%;
+        z-index: 10;
+        background-color: rgba(20, 16, 9, .9);
+        margin: 0;
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.Header_rewardList__QK9Md.Header_show__2PbGy {
+    top: 50px;
+    opacity: 1;
+    visibility: visible
+}
+
+@media(max-width:769px) {
+    .Header_rewardList__QK9Md.Header_show__2PbGy {
+        left: 0
+    }
+}
+
+.Header_rewardList__QK9Md .Header_closeMenuBars__1jrUI {
+    display: none;
+    margin-top: 5px;
+    margin-right: 0
+}
+
+@media(max-width:769px) {
+    .Header_rewardList__QK9Md .Header_closeMenuBars__1jrUI {
+        display: block
+    }
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw {
+    max-height: 360px;
+    overflow-y: auto;
+    margin: 0 -10px 0 0;
+    padding-right: 10px;
+    width: 100%
+}
+
+@media(max-width:769px) {
+    .Header_rewardList__QK9Md .Header_listRward__TFJEw {
+        max-height: -webkit-calc(100vh - 190px);
+        max-height: calc(100vh - 190px)
+    }
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw::-webkit-scrollbar {
+    width: 4px
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #0d0500
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw::-webkit-scrollbar-thumb {
+    background-color: #e6ab58;
+    border-radius: 4px
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw li {
+    border-bottom: 1px solid #403535;
+    position: relative;
+    padding: 14px 0;
+    min-height: 75px;
+    color: #fff
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw li:last-child {
+    border-bottom: none
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw li .Header_rewardItemTitle__GCWJJ {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: none;
+    margin: 0 0 5px;
+    font-family: Squada One
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw li .Header_rewardItemCountdown__3FvE7 {
+    font-family: Open Sans, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
+    text-transform: none;
+    display: block
+}
+
+.Header_rewardList__QK9Md .Header_listRward__TFJEw li .Header_btnClaim__3qQCS {
+    width: 90px;
+    background-image: url(../../../img/play/btn-buy.png);
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -18px;
+    color: #0f0801;
+    font-size: 15px;
+    height: 36px
+}
+
+.Header_rewardPagination__-I1Sa {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    text-transform: none
+}
+
+.Header_rewardLoading__3Nvtk {
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10
+}
+
+.Header_rewardLoading__3Nvtk img {
+    border-radius: 50%;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.Header_rewardListTab__3YWtn {
+    display: -moz-box;
+    display: flex;
+    background: #0f0801;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    height: 48px;
+    -moz-box-align: center;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    width: 100%
+}
+
+.Header_rewardListTab__3YWtn>div {
+    width: 50%;
+    line-height: 40px;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.Header_rewardListTab__3YWtn .Header_rewardListTabActive__7zDuW {
+    background: #fed3a6;
+    color: #110901
+}
+
+.Header_rewardTax__3MeAd {
+    font-size: 12px;
+    text-align: center;
+    color: #fac57a;
+    text-transform: none;
+    position: absolute;
+    right: 20px;
+    bottom: 2px;
+    font-weight: 400;
+    font-family: SF Pro Display
+}
+
+.Header_rewardStatus__27TXv {
+    color: #ff8300;
+    font-weight: 600;
+    margin-left: 5px
+}
+
+.Header_rewardStatus__27TXv[status=Done] {
+    color: #00c24e
+}
+
+.Header_swap__1msbr {
+    padding: 40px;
+    text-align: center;
+    color: #e6ab58
+}
+
+.Header_swap__1msbr .Header_swapInput__1Rbv0 {
+    margin: 30px auto 0;
+    position: relative;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center
+}
+
+.Header_swap__1msbr .Header_swapInput__1Rbv0 span {
+    position: absolute;
+    right: 10px;
+    color: #ff8300;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.Header_swap__1msbr .Header_swapInput__1Rbv0 span:hover {
+    color: #fff
+}
+
+.Header_swap__1msbr input {
+    background: #0f0801;
+    border: 1px solid #432300;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 52px;
+    color: #fff;
+    padding: 10px 55px 10px 16px;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    font-family: Squada One
+}
+
+.Header_swap__1msbr input::-webkit-inner-spin-button,
+.Header_swap__1msbr input::-webkit-outer-spin-button {
+    -webkit-appearance: none
+}
+
+.Header_swap__1msbr input[type=number] {
+    -moz-appearance: textfield
+}
+
+.Header_swap__1msbr .Header_swapPriceTxt__2F1uX {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    font-family: SF Pro Display, sans-serif;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 30px
+}
+
+.Header_swap__1msbr .Header_swapPriceTxt__2F1uX span {
+    color: #fff
+}
+
+.Header_swap__1msbr .Header_btn__3H6yr {
+    margin: 0 auto
+}
+
+.Header_btn__3H6yr {
+    height: 48px;
+    background-size: 100% 100%;
+    font-weight: 700;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    color: #eedda1;
+    cursor: pointer;
+    margin-left: 10px;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+@media(max-width:480px) {
+    .Header_btn__3H6yr {
+        height: 36px
+    }
+}
+
+.Header_btn__3H6yr:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.Header_btnConnect__5faJw {
+    background-image: url(../../../img/play/btn-connect.png);
+    color: #fff;
+    padding: 0 10px
+}
+
+@media(max-width:480px) {
+    .Header_btnConnect__5faJw {
+        height: 36px;
+        padding: 0 3px;
+        font-size: 13px
+    }
+}
+
+.Header_btnConnect__5faJw .Header_iconWrap__3sueq {
+    padding: 4px;
+    border-radius: 50%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8d4200), to(#d16202));
+    background: -webkit-linear-gradient(top, #8d4200, #d16202);
+    background: linear-gradient(180deg, #8d4200, #d16202);
+    width: 40px;
+    height: 40px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    margin-right: 10px
+}
+
+@media(max-width:480px) {
+    .Header_btnConnect__5faJw .Header_iconWrap__3sueq {
+        width: 32px;
+        height: 32px
+    }
+}
+
+.Header_btnConnect__5faJw .Header_iconWrap__3sueq img {
+    width: 100%
+}
+
+.Header_btnConnect__5faJw span {
+    display: block;
+    font-size: 14px
+}
+
+.Header_btnConnect__5faJw>div {
+    width: 70%;
+    flex-shrink: 0;
+    height: 100%;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -moz-box-pack: center;
+    justify-content: center;
+    line-height: 16px;
+    font-size: 16px
+}
+
+@media(max-width:480px) {
+    .Header_btnConnect__5faJw>div {
+        font-size: 13px
+    }
+}
+
+.Header_btnWallet__2FjuJ {
+    width: 164px;
+    position: relative
+}
+
+.Header_btnWallet__2FjuJ:hover .Header_authPopup__2hSla {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto
+}
+
+.Header_btnBuy__VUnTU {
+    background-image: url(../../../img/play/btn-buy.png);
+    min-width: 130px;
+    color: #381c0b;
+    padding: 0 10px
+}
+
+@media(max-width:480px) {
+    .Header_btnBuy__VUnTU {
+        margin-left: 0;
+        width: -webkit-calc(50% - 7.5px);
+        width: calc(50% - 7.5px)
+    }
+}
+
+.Header_btnClaim__3qQCS {
+    background-image: url(/img/play/btn-claim.png);
+    width: 105px
+}
+
+.Header_menuMobile__MppoW {
+    display: none
+}
+
+@media(max-width:1279px) {
+    .Header_menuMobile__MppoW {
+        display: block;
+        width: 500px;
+        max-width: 100%;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column;
+        -moz-box-align: end;
+        align-items: flex-end;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        z-index: 10;
+        background-color: rgba(20, 16, 9, .9);
+        margin: 0;
+        -webkit-transition: all .4s;
+        transition: all .4s
+    }
+    .Header_menuMobile__MppoW.Header_show__2PbGy {
+        right: 0
+    }
+    .Header_menuMobile__MppoW li {
+        width: 100%;
+        padding: 10px 20px
+    }
+}
+
+.Header_closeMenuBars__1jrUI,
+.Header_openMenuBars__2ztpI {
+    display: none;
+    width: 48px;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+@media(max-width:1279px) {
+    .Header_closeMenuBars__1jrUI,
+    .Header_openMenuBars__2ztpI {
+        display: block
+    }
+}
+
+@media(max-width:480px) {
+    .Header_closeMenuBars__1jrUI,
+    .Header_openMenuBars__2ztpI {
+        width: 36px
+    }
+}
+
+@media(max-width:1279px) {
+    .Header_closeMenuBars__1jrUI {
+        width: 22px;
+        margin: 20px 20px 50px
+    }
+}
+
+@media(max-width:480px) {
+    .Header_closeMenuBars__1jrUI {
+        margin-bottom: 30px
+    }
+}
+
+@media(max-width:769px) {
+    .Header_hideOnMobile__2HoT8 {
+        display: none!important
+    }
+}
+
+.Header_authPopup__2hSla {
+    background: #130b04;
+    border-radius: 6px;
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    right: -14px;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-transform: scale(.9);
+    transform: scale(.9)
+}
+
+.Header_authPopup__2hSla:after {
+    content: "";
+    display: block;
+    width: 115%;
+    height: 115%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 0
+}
+
+.Header_authPopup__2hSla .Header_line__Tp_Hz {
+    max-width: 100%;
+    margin: 15px 0
+}
+
+.Header_disconnectBtn__1lIQo {
+    font-family: Elan;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #e6ab58;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    cursor: pointer
+}
+
+.Header_dytBalance__1mm5T {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    font-family: Elan
+}
+
+.Header_dytBalance__1mm5T span {
+    font-size: 18px
+}
+
+.Header_arrowUp__13LxV {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #000;
+    position: absolute;
+    top: -10px;
+    right: 10px
+}
+
+.Header_error__3BGNz {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    text-transform: none
+}
+
+.Vaults_container__3wQ9A {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: #fff;
+    background-color: #1a130e;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 0 0;
+    font-family: Open Sans, sans-serif;
+    text-align: center;
+    z-index: 1
+}
+
+.Vaults_container__3wQ9A * {
+    margin: 0
+}
+
+.Vaults_container__3wQ9A h1 {
+    font-family: Elan;
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 400
+}
+
+@media(max-width:480px) {
+    .Vaults_container__3wQ9A h1 {
+        font-size: 30px
+    }
+}
+
+.Vaults_mainContent__2_sYu {
+    width: 1200px;
+    max-width: -webkit-calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+    padding: 100px 0
+}
+
+@media(max-width:480px) {
+    .Vaults_mainContent__2_sYu {
+        padding-top: 30px
+    }
+}
+
+.Vaults_mainContent__2_sYu>h2 {
+    font-family: Elan;
+    font-weight: 400;
+    font-size: 48px;
+    margin-bottom: 40px;
+    line-height: 1.3
+}
+
+@media(max-width:480px) {
+    .Vaults_mainContent__2_sYu>h2 {
+        font-size: 22px
+    }
+}
+
+.Vaults_titlePage__1Til6 {
+    margin-bottom: 65px;
+    font-family: Open Sans
+}
+
+.Vaults_titlePage__1Til6 p {
+    font-size: 18px;
+    color: #fcd1a5
+}
+
+.Vaults_listVaults__1VQwg {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+@media(max-width:769px) {
+    .Vaults_listVaults__1VQwg {
+        -moz-box-pack: center;
+        justify-content: center;
+        margin: 0 -10px
+    }
+}
+
+.Vaults_listVaults__1VQwg .Vaults_vaultItem__Yh8gU {
+    align-self: center;
+    margin: 20px 20px 50px;
+    width: 380px;
+    height: 568px;
+    max-width: 90%;
+    background: -webkit-linear-gradient(340.86deg, #ffd9b0, #977f66);
+    background: linear-gradient(109.14deg, #ffd9b0, #977f66);
+    border-radius: 20px;
+    overflow: hidden;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: Open Sans;
+    color: #1a140f;
+    font-size: 14px;
+    line-height: 1
+}
+
+@media(max-width:1279px) {
+    .Vaults_listVaults__1VQwg .Vaults_vaultItem__Yh8gU {
+        width: -webkit-calc(33.33% - 10px);
+        width: calc(33.33% - 10px);
+        padding: 0 15px
+    }
+}
+
+@media(max-width:769px) {
+    .Vaults_listVaults__1VQwg .Vaults_vaultItem__Yh8gU {
+        width: -webkit-calc(50% - 20px);
+        width: calc(50% - 20px);
+        margin: 0 10px 30px
+    }
+}
+
+@media(max-width:480px) {
+    .Vaults_listVaults__1VQwg .Vaults_vaultItem__Yh8gU {
+        width: 100%
+    }
+}
+
+.Vaults_topInfo__3ESSw {
+    padding: 62px 0 0;
+    position: relative
+}
+
+.Vaults_topInfo__3ESSw>h3 {
+    color: #1a140f;
+    font-size: 24px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    font-weight: 700
+}
+
+.Vaults_topInfo__3ESSw>h4 {
+    font-size: 14px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    font-weight: 400;
+    max-width: 200px;
+    margin: 0 auto
+}
+
+.Vaults_dailyVesting__3jycs {
+    position: absolute;
+    width: -webkit-calc(100% + 40px);
+    width: calc(100% + 40px);
+    background-color: #f9bb61;
+    top: 0;
+    left: -20px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Open Sans;
+    color: #1a140f;
+    text-transform: uppercase;
+    line-height: 32px
+}
+
+.Vaults_mainVault__1aOiz {
+    display: -moz-box;
+    display: flex;
+    margin-top: 30px
+}
+
+.Vaults_mainVault__1aOiz>div {
+    padding: 20px 17px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .3)
+}
+
+@media(max-width:1279px) {
+    .Vaults_mainVault__1aOiz>div {
+        padding: 15px
+    }
+}
+
+.Vaults_mainVault__1aOiz .Vaults_mainVaultLeft__1ET9I {
+    width: 65%;
+    margin-right: 12px;
+    flex-shrink: 0
+}
+
+.Vaults_duration__245KK {
+    text-align: left;
+    padding-left: 47px;
+    background-image: url(../../../img/clock.png);
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+    background-position: 0
+}
+
+.Vaults_duration__245KK h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px
+}
+
+.Vaults_duration__245KK p {
+    font-size: 20px
+}
+
+.Vaults_duration__245KK p strong {
+    font-size: 32px;
+    font-weight: 400
+}
+
+@media(max-width:1279px) {
+    .Vaults_duration__245KK p strong {
+        font-size: 28px
+    }
+}
+
+.Vaults_apy__2c26A {
+    text-align: center
+}
+
+.Vaults_apy__2c26A h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px
+}
+
+.Vaults_apy__2c26A p {
+    font-size: 20px
+}
+
+.Vaults_apy__2c26A p strong {
+    font-size: 32px
+}
+
+@media(max-width:1279px) {
+    .Vaults_apy__2c26A p strong {
+        font-size: 28px
+    }
+}
+
+.Vaults_dateInfo__hoFoN {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between
+}
+
+.Vaults_dateInfo__hoFoN>div {
+    width: -webkit-calc(100% - 10px);
+    width: calc(100% - 10px)
+}
+
+@media(max-width:1279px) {
+    .Vaults_dateInfo__hoFoN>div {
+        width: -webkit-calc(100% - 5px);
+        width: calc(100% - 5px)
+    }
+}
+
+.Vaults_dateColum__vHzUm {
+    margin-top: 20px
+}
+
+.Vaults_dateColum__vHzUm h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.Vaults_dateColum__vHzUm span {
+    display: block;
+    background-color: #fff;
+    border-radius: 8px;
+    line-height: 32px;
+    white-space: nowrap
+}
+
+.Vaults_bottomInfo__3dsCY button {
+    outline: none;
+    border: none;
+    font-family: Elan;
+    text-transform: uppercase;
+    width: 240px;
+    height: 48px;
+    margin-bottom: 40px;
+    border-radius: 48px;
+    color: #fff;
+    font-size: 15px;
+    background-color: #1a130e;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Vaults_bottomInfo__3dsCY button:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.Vaults_bottomInfo__3dsCY p {
+    height: 44px;
+    margin: 0 -20px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #775c49;
+    font-size: 14px;
+    color: #fff
+}
+
+.Vaults_bottomInfo__3dsCY p strong {
+    font-weight: 600
+}
+
+.Vaults_balance__HiFXm {
+    margin-bottom: 15px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    padding-top: 10px
+}
+
+.Vaults_balance__HiFXm .Vaults_amount__91b5D,
+.Vaults_balance__HiFXm .Vaults_btn__2a7s_ {
+    padding: 0 15px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    color: #1a140f;
+    margin: 0 10px
+}
+
+.Vaults_balance__HiFXm .Vaults_btn__2a7s_ {
+    margin: 0;
+    color: #fff;
+    background: #1a130e;
+    font-weight: 700
+}
+
+.Vaults_stakeInput__2GTva {
+    position: relative;
+    margin-bottom: 15px
+}
+
+.Vaults_stakeInput__2GTva input {
+    font-size: 18px;
+    height: 48px;
+    background: #fff;
+    border-radius: 24px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 20px
+}
+
+.Vaults_stakeInput__2GTva .Vaults_stakeInputMax__1Db7N {
+    color: #c16300;
+    font-family: Open Sans;
+    font-weight: 700;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+    line-height: 48px
+}
+
+.Vaults_msgContact__a3-hA {
+    font-size: 18px;
+    margin: 65px 0 80px;
+    line-height: 2.2
+}
+
+@media(max-width:769px) {
+    .Vaults_msgContact__a3-hA br {
+        display: none
+    }
+}
+
+.Vaults_msgEmail__2WINS {
+    font-size: 16px;
+    margin-bottom: 24px;
+    color: #fcd1a5
+}
+
+.Vaults_inputEmail__3KCQW {
+    width: 320px;
+    height: 48px;
+    outline: none;
+    border: 1px solid #362d25;
+    background-color: #1a130e;
+    border-radius: 48px;
+    font-size: 15px;
+    color: #fff;
+    padding-left: 52px;
+    background-image: url(../../../img/email.svg);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: 22px
+}
+
+.Vaults_inputEmail__3KCQW::-webkit-input-placeholder {
+    color: #fff
+}
+
+.Vaults_inputEmail__3KCQW::-moz-placeholder {
+    color: #fff
+}
+
+.Vaults_inputEmail__3KCQW:-ms-input-placeholder {
+    color: #fff
+}
+
+.Vaults_inputEmail__3KCQW::placeholder {
+    color: #fff
+}
+
+.Vaults_popupBackdrop__1FGeG {
+    background-color: #000;
+    opacity: .5;
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.Vaults_popup__3sfmp {
+    width: 700px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #171212;
+    border-radius: 4px;
+    position: fixed;
+    z-index: 1032;
+    max-width: 90%;
+    max-height: 90%
+}
+
+.Vaults_popup__3sfmp .Vaults_close__2p7w- {
+    width: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Vaults_popup__3sfmp .Vaults_close__2p7w-:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.Vaults_popup__3sfmp .Vaults_popupHeader__9PD89 {
+    font-family: Elan;
+    height: 55px;
+    font-size: 24px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    -moz-box-pack: center;
+    justify-content: center;
+    background-color: #201a1a
+}
+
+.Vaults_stakeTable__3BFaC {
+    list-style: none;
+    margin: 40px;
+    border: 1px solid #362d25;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 0;
+    overflow: auto;
+    max-height: 80%;
+    width: 100%
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC {
+        margin: 20px
+    }
+}
+
+.Vaults_stakeTable__3BFaC tr {
+    padding: 0 20px;
+    height: 50px;
+    min-height: 50px;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: 1px solid #362d25
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC tr {
+        display: block;
+        height: auto
+    }
+}
+
+.Vaults_stakeTable__3BFaC tr:last-child {
+    border: none
+}
+
+.Vaults_stakeTable__3BFaC tr .Vaults_stakeTableRow__sdzIe {
+    display: block
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC tr .Vaults_stakeTableRow__sdzIe {
+        width: 100%!important;
+        margin: 10px 0
+    }
+}
+
+.Vaults_stakeTable__3BFaC tr .Vaults_claimBtn__1HDoJ {
+    font-family: Open Sans;
+    font-size: 14px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    color: #fff;
+    background: #ff8300;
+    border-radius: 32px;
+    flex-shrink: 0;
+    min-width: 96px;
+    width: 80%;
+    height: 32px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Vaults_stakeTable__3BFaC tr .Vaults_claimBtn__1HDoJ:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC tr .Vaults_claimBtn__1HDoJ {
+        display: -moz-box;
+        display: flex
+    }
+}
+
+.Vaults_stakeTable__3BFaC tr .Vaults_btnDisable__23g89 {
+    background: #362d25
+}
+
+.Vaults_stakeTable__3BFaC .Vaults_stakeTableHeader__3r_MI {
+    background: #362d25;
+    font-weight: 700;
+    border: none;
+    height: 40px;
+    min-height: 40px
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC .Vaults_stakeTableHeader__3r_MI {
+        display: none
+    }
+}
+
+.Vaults_stakeTable__3BFaC .Vaults_stakeTableLabel__3hDbt {
+    display: none
+}
+
+@media(max-width:480px) {
+    .Vaults_stakeTable__3BFaC .Vaults_stakeTableLabel__3hDbt {
+        display: inline
+    }
+}
+
+.Vaults_highlight__H_OEv {
+    color: #c16300
+}
+
+.Vaults_stakeInputWrap__1GAUr {
+    padding: 30px 40px
+}
+
+.Vaults_stakeInputWrap__1GAUr h4 {
+    color: #e6ab58;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-transform: none;
+    margin-bottom: 16px;
+    margin-top: 0
+}
+
+.Vaults_stakeInputWrap__1GAUr input {
+    background: #312828;
+    border: 1px solid #312828;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    height: 52px;
+    padding-left: 15px;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    font-family: Squada One
+}
+
+.Vaults_stakeInputWrap__1GAUr .Vaults_approveBtn__1qOo0 {
+    height: 48px;
+    background: #ff8300;
+    border-radius: 6px;
+    font-family: Elan;
+    font-size: 15px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Vaults_stakeInputWrap__1GAUr .Vaults_approveBtn__1qOo0:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.Vaults_stakeInputPopup__1p8qs {
+    width: 390px;
+    height: 276px
+}
+
+.Vaults_vaultSubHeader__54gkm {
+    display: -moz-box;
+    display: flex;
+    text-align: center;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center
+}
+
+.Vaults_vaultSubHeader__54gkm span {
+    outline: none;
+    border: none;
+    font-family: Bebas Neue;
+    text-transform: uppercase;
+    width: 200px;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 40px;
+    border-radius: 48px;
+    color: #fff;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, .3);
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.Vaults_vaultSubHeader__54gkm span:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}

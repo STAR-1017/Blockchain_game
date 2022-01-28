@@ -1,0 +1,34 @@
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+    [18], {
+        83987: function(e, s, i) {
+            "use strict";
+            i(67294);
+            var r = i(39784),
+                t = i.n(r),
+                n = i(41664),
+                c = i(85893);
+            s.Z = function() { return (0, c.jsxs)("div", { className: t().footer, children: [(0, c.jsx)("p", { children: "\xa9 Copyright 2021 by The Dynasty! All rights reserved!" }), (0, c.jsx)("span", { children: "v1.2.9" }), (0, c.jsxs)("ul", { children: [(0, c.jsx)("li", { children: (0, c.jsx)(n.default, { href: "/", children: (0, c.jsx)("a", { children: "Privacy Policy" }) }) }), (0, c.jsx)("li", { children: (0, c.jsx)(n.default, { href: "/", children: (0, c.jsx)("a", { children: "Terms of Use" }) }) })] })] }) }
+        },
+        50601: function(e, s, i) {
+            "use strict";
+            i.r(s);
+            var r = i(87243),
+                t = i.n(r),
+                n = i(87146),
+                c = i(83987),
+                a = i(41664),
+                l = i(85893);
+            s.default = function() { return (0, l.jsxs)(l.Fragment, { children: [(0, l.jsx)(n.Z, {}), (0, l.jsxs)("div", { className: t().container, children: [(0, l.jsxs)("div", { className: t().title, children: [(0, l.jsx)("h2", { children: "Tiers" }), (0, l.jsx)("button", { children: "coming soon" })] }), (0, l.jsxs)("div", { className: t().staked, children: [(0, l.jsxs)("p", { children: ["Your staked ", (0, l.jsx)("br", {}), " amount: DYT"] }), (0, l.jsxs)("div", { className: t().listTiers, children: [(0, l.jsxs)("div", { className: t().lineTiers, children: [(0, l.jsx)("img", { src: "/img/tiers/dot-tier.svg", alt: "" }), (0, l.jsx)("img", { src: "/img/tiers/dot-tier.svg", alt: "" }), (0, l.jsx)("img", { src: "/img/tiers/dot-tier.svg", alt: "" })] }), (0, l.jsxs)("div", { className: t().tierItem, children: [(0, l.jsx)("h3", { children: "Tier - 1" }), (0, l.jsx)("span", { children: "500 DYT" }), (0, l.jsx)("button", { children: "coming soon" })] }), (0, l.jsxs)("div", { className: t().tierItem, children: [(0, l.jsx)("h3", { children: "Tier - 2" }), (0, l.jsx)("span", { children: "5,000 DYT" }), (0, l.jsx)("button", { children: "coming soon" })] }), (0, l.jsxs)("div", { className: t().tierItem, children: [(0, l.jsx)("h3", { children: "Tier - 3" }), (0, l.jsx)("span", { children: "20,000 DYT" }), (0, l.jsx)("button", { children: "coming soon" })] })] })] }), (0, l.jsx)("div", { className: t().title, children: (0, l.jsx)("h2", { children: "Upcoming projects" }) }), (0, l.jsxs)("div", { className: t().upcommingProject, children: [(0, l.jsxs)("div", { className: t().project, children: [(0, l.jsx)("div", { className: t().img, style: { backgroundImage: "url(/img/tiers/project1.png)" } }), (0, l.jsx)("h3", { children: "Penthouse" }), (0, l.jsxs)("div", { className: t().listIcon, children: [(0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/home.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/telegram.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/twitter.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/document.svg", alt: "" }) }) })] }), (0, l.jsx)("p", { children: "The game has a built-in 3D engine that allows residents to create new items and clothes as they..." }), (0, l.jsx)("a", { href: "#", children: "Read more" })] }), (0, l.jsxs)("div", { className: t().project, children: [(0, l.jsx)("div", { className: t().img, style: { backgroundImage: "url(/img/tiers/project2.png)" } }), (0, l.jsx)("h3", { children: "Hero Academy" }), (0, l.jsxs)("div", { className: t().listIcon, children: [(0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/home.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/telegram.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/twitter.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/document.svg", alt: "" }) }) })] }), (0, l.jsx)("p", { children: "Hanzo and his path to becoming the most powerful superhero ever. However, this process is not easy..." }), (0, l.jsx)("a", { href: "#", children: "Read more" })] }), (0, l.jsxs)("div", { className: t().project, children: [(0, l.jsx)("div", { className: t().img, style: { backgroundImage: "url(/img/tiers/project3.png)" } }), (0, l.jsx)("h3", { children: "The Dynasty" }), (0, l.jsxs)("div", { className: t().listIcon, children: [(0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/home.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/telegram.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/twitter.svg", alt: "" }) }) }), (0, l.jsx)(a.default, { href: "/", children: (0, l.jsx)("a", { children: (0, l.jsx)("img", { src: "/img/tiers/document.svg", alt: "" }) }) })] }), (0, l.jsx)("p", { children: "Many civilizations were destroyed or vanished at the end of the world due to war. The ambition to..." }), (0, l.jsx)("a", { href: "#", children: "Read more" })] })] })] }), (0, l.jsx)(c.Z, {})] }) }
+        },
+        62066: function(e, s, i) {
+            (window.__NEXT_P = window.__NEXT_P || []).push(["/launchpad", function() { return i(50601) }])
+        },
+        39784: function(e) { e.exports = { footer: "Footer_footer__3f33N" } },
+        87243: function(e) { e.exports = { container: "Launchpad_container__10Ppw", title: "Launchpad_title__2FAiA", staked: "Launchpad_staked__2LLSk", listTiers: "Launchpad_listTiers__3pwXy", lineTiers: "Launchpad_lineTiers__2u0C-", tierItem: "Launchpad_tierItem__2Recm", upcommingProject: "Launchpad_upcommingProject__2NIU7", project: "Launchpad_project__3tuCk", img: "Launchpad_img__1Wl_R", listIcon: "Launchpad_listIcon__2kLYS", footer: "Launchpad_footer__1z4hq" } }
+    },
+    function(e) {
+        e.O(0, [774, 482, 885, 250, 170, 888, 179], (function() { return s = 62066, e(e.s = s); var s }));
+        var s = e.O();
+        _N_E = s
+    }
+]);
